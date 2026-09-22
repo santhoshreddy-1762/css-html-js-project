@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <form onsubmit="return validateForm()">
+            Name:<input type="text" id="name"><br><br>
+            Email:<input type="text" id="email"><br><br>
+            password:<input type="text" id="password"><br><br>
+            <input type="submit" value="submit">
+
+        </form>
+        <script>
+            function validateForm(){
+                let name =document.getElementById("name").value;
+                let email=document.getElementById("email").value;
+                let passward=document.getElementById("passward").value;
+                if(name == "" || email == "" || passward ==""){
+                    alert("please fill in all fields.");
+                    return false;
+                }
+                if (password.length<6) {
+                    alert("password must contain at least 6 charaters.");
+                    return false;
+
+                }
+                alert("form submitted successsfully");
+                return true;
+            }
+        </script>
+    </body>
+</html>
