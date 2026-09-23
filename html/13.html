@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Webpage</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .box {
+            flex: 1;
+            padding: 30px;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        /* For smaller screens */
+        @media (max-width: 600px) {
+
+            .container {
+                flex-direction: column;
+            }
+
+            .box {
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Responsive Webpage</h1>
+
+    <div class="container">
+
+        <div class="box">
+            Box 1
+        </div>
+
+        <div class="box">
+            Box 2
+        </div>
+
+        <div class="box">
+            Box 3
+        </div>
+
+    </div>
+
+</body>
+</html>
