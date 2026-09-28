@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="HTML, CSS and JavaScript Practical Programs">
+
+    <title>Web Technology Practical Programs</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #0b3d91;
+            color: white;
+            padding: 18px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            background: linear-gradient(135deg, #e3f2fd, #ffffff);
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: #0b3d91;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .programs {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .program-card {
+            background: white;
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: #0b3d91;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .program-card h2 {
+            color: #0b3d91;
+            margin-bottom: 15px;
+        }
+
+        .program-card p {
+            color: #666;
+            margin-bottom: 25px;
+            min-height: 80px;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            background: #0b3d91;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #062b68;
+        }
+
+        footer {
+            background: #0b3d91;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                padding: 60px 20px 40px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .programs {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            Web Practical
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="html/index.html">HTML</a>
+
+            <a href="css1/index.html">CSS</a>
+
+            <a href="javascript/index.html">JavaScript</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <h1>
+                HTML CSS JavaScript Practical Programs
+            </h1>
+
+            <p>
+                A complete collection of practical programs for
+                HTML, CSS and JavaScript.
+            </p>
+
+        </section>
+
+
+        <section class="programs">
+
+            <div class="program-card">
+
+                <div class="icon">
+                    H
+                </div>
+
+                <h2>
+                    HTML Programs
+                </h2>
+
+                <p>
+                    Practice HTML elements, forms, tables, images,
+                    links, multimedia and semantic elements.
+                </p>
+
+                <a href="html/index.html" class="button">
+                    View Programs
+                </a>
+
+            </div>
+
+
+            <div class="program-card">
+
+                <div class="icon">
+                    C
+                </div>
+
+                <h2>
+                    CSS Programs
+                </h2>
+
+                <p>
+                    Practice CSS selectors, layouts, colors,
+                    animations, responsive design and UI components.
+                </p>
+
+                <a href="css1/index.html" class="button">
+                    View Programs
+                </a>
+
+            </div>
+
+
+            <div class="program-card">
+
+                <div class="icon">
+                    JS
+                </div>
+
+                <h2>
+                    JavaScript Programs
+                </h2>
+
+                <p>
+                    Practice JavaScript fundamentals, DOM,
+                    events, forms, storage and mini projects.
+                </p>
+
+                <a href="javascript/index.html" class="button">
+                    View Programs
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTML CSS JavaScript Practical Programs
+        </p>
+
+        <p>
+            Student Project
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
+
