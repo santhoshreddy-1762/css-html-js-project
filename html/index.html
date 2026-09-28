@@ -1,0 +1,248 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Practical Programs</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 16px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 35px auto;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .number {
+            display: inline-block;
+            background: #1e3a8a;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            color: #1e3a8a;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #1e3a8a;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background: #2563eb;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>HTML Practical Programs</h1>
+        <p>Web Technology Laboratory Dashboard</p>
+    </header>
+
+    <main class="container">
+
+        <div class="program-grid">
+
+            <div class="card">
+                <span class="number">Program 01</span>
+                <h2>Basic HTML Webpage</h2>
+                <p>Headings, paragraphs and line breaks using HTML.</p>
+                <a href="1.html" class="btn">View Program</a>
+            </div>
+
+            <div class="card">
+                <span class="number">Program 02</span>
+                <h2>HTML Lists</h2>
+                <p>Ordered, unordered and description lists.</p>
+                <a href="2.html" class="btn">View Program</a>
+            </div>
+
+            <div class="card">
+                <span class="number">Program 03</span>
+                <h2>HTML Tables</h2>
+                <p>Tables with rows, columns, borders and merged cells.</p>
+                <a href="3.html" class="btn">View Program</a>
+            </div>
+
+            <div class="card">
+                <span class="number">Program 04</span>
+                <h2>Images and Hyperlinks</h2>
+                <p>Adding images and hyperlinks to an HTML webpage.</p>
+                <a href="4.html" class="btn">View Program</a>
+            </div>
+
+            <div class="card">
+                <span class="number">Program 05</span>
+                <h2>Student Registration Form</h2>
+                <p>Student registration form using HTML form elements.</p>
+                <a href="5.html" class="btn">View Program</a>
+            </div>
+
+            <div class="card">
+                <span class="number">Program 06</span>
+                <h2>Audio and Video</h2>
+                <p>Using HTML audio and video elements.</p>
+                <a href="6.html" class="btn">View Program</a>
+            </div>
+
+            <div class="card">
+                <span class="number">Program 07</span>
+                <h2>Frames and Iframes</h2>
+                <p>Embedding webpages using HTML iframe elements.</p>
+                <a href="7.html" class="btn">View Program</a>
+            </div>
+
+            <div class="card">
+                <span class="number">Program 08</span>
+                <h2>Semantic Elements</h2>
+                <p>Using header, nav, section, article and footer.</p>
+                <a href="8.html" class="btn">View Program</a>
+            </div>
+
+            <div class="card">
+                <span class="number">Program 09</span>
+                <h2>HTML5 Input Types</h2>
+                <p>Email, date, number, password and other HTML5 inputs.</p>
+                <a href="9.html" class="btn">View Program</a>
+            </div>
+
+            <div class="card">
+                <span class="number">Program 10</span>
+                <h2>College Timetable</h2>
+                <p>Creating a college timetable using an HTML table.</p>
+                <a href="10.html" class="btn">View Program</a>
+            </div>
+
+            <div class="card">
+                <span class="number">Program 11</span>
+                <h2>Internal and External CSS</h2>
+                <p>Applying internal and external CSS styling to a webpage.</p>
+                <a href="11.html" class="btn">View Program</a>
+            </div>
+
+            <div class="card">
+                <span class="number">Program 12</span>
+                <h2>CSS Selectors and Styling</h2>
+                <p>Selectors, colors, fonts, margins, padding and borders.</p>
+                <a href="12.html" class="btn">View Program</a>
+            </div>
+
+            <div class="card">
+                <span class="number">Program 13</span>
+                <h2>Responsive Webpage</h2>
+                <p>Creating a responsive webpage using CSS media queries.</p>
+                <a href="13.html" class="btn">View Program</a>
+            </div>
+
+            <div class="card">
+                <span class="number">Program 14</span>
+                <h2>Bootstrap Components</h2>
+                <p>Creating a webpage using Bootstrap components.</p>
+                <a href="14.html" class="btn">View Program</a>
+            </div>
+
+            <div class="card">
+                <span class="number">Program 15</span>
+                <h2>Personal Portfolio</h2>
+                <p>A simple personal portfolio webpage using HTML and CSS.</p>
+                <a href="15.html" class="btn">View Program</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>HTML Practical Programs Dashboard</p>
+    </footer>
+
+</body>
+</html>
