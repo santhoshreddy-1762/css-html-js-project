@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selectors</title>
+    <style>
+        .container p {
+            color: blue;
+        }
+
+        .container > h2 {
+            color: green;
+        }
+
+        h2 + p {
+            background: yellow;
+        }
+
+        h2 ~ p {
+            border: 2px solid red;
+            padding: 5px;
+        }
+
+        .container {
+            padding: 20px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>CSS Selectors</h2>
+    <p>Adjacent sibling paragraph</p>
+    <p>General sibling paragraph</p>
+
+    <div>
+        <p>Descendant paragraph</p>
+    </div>
+</div>
+
+</body>
+</html>
