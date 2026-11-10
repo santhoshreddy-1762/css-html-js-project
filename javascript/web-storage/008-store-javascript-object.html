@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>Store Object</title></head>
+<body>
+    <h2>Student Object</h2>
+    <button onclick="saveStudent()">Save Object</button>
+    <button onclick="showStudent()">Display Object</button>
+    <p id="output"></p>
+
+    <script>
+        let student = {
+            name: "Santhosh",
+            age: 20,
+            course: "B.Tech"
+        };
+
+        function saveStudent() {
+            localStorage.setItem("student", JSON.stringify(student));
+            document.getElementById("output").innerText = "Student saved";
+        }
+
+        function showStudent() {
+            let data = JSON.parse(localStorage.getItem("student"));
+            document.getElementById("output").innerText = data
+                ? "Name: " + data.name + ", Age: " + data.age +
+                  ", Course: " + data.course
+                : "No student found";
+        }
+    </script>
+</body>
+</html>

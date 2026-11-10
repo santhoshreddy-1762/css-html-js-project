@@ -1,0 +1,354 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage Programs</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #0b3d91;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #7ee8fa;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0b3d91, #00a6a6);
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #0b3d91;
+            font-size: 28px;
+        }
+
+        .programs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .program {
+            background: white;
+            padding: 23px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #00a6a6;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .program:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+        }
+
+        .program h3 {
+            color: #0b3d91;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .program p {
+            color: #555;
+            line-height: 1.5;
+            min-height: 45px;
+            margin-bottom: 18px;
+        }
+
+        .program a {
+            display: inline-block;
+            background: #0b3d91;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .program a:hover {
+            background: #00a6a6;
+        }
+
+        footer {
+            background: #102a43;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .programs {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero h1 {
+                font-size: 29px;
+            }
+
+            .programs {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Web Storage Programs</div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="#programs">Programs</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>JavaScript Web Storage</h1>
+        <p>
+            Learn localStorage and sessionStorage through 25 practical programs.
+            <br>
+            Select any program below to view and run its code.
+        </p>
+    </section>
+
+    <main class="container" id="programs">
+        <h2 class="section-title">Web Storage Practical Programs</h2>
+
+        <div class="programs">
+
+            <div class="program">
+                <h3>01. Store Username</h3>
+                <p>Store a username using localStorage.</p>
+                <a href="001-store-username-using-localstorage.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>02. Retrieve Data</h3>
+                <p>Retrieve and display data from localStorage.</p>
+                <a href="002-retrieve-and-display-localstorage-data.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>03. Update Data</h3>
+                <p>Update data stored in localStorage.</p>
+                <a href="003-update-localstorage-data.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>04. Delete an Item</h3>
+                <p>Delete a specific item from localStorage.</p>
+                <a href="004-delete-localstorage-item.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>05. Clear Storage</h3>
+                <p>Clear all localStorage data for the current website.</p>
+                <a href="005-clear-all-localstorage.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>06. Store Multiple Values</h3>
+                <p>Store multiple values using localStorage.</p>
+                <a href="006-store-multiple-localstorage-values.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>07. Store an Array</h3>
+                <p>Store and retrieve an array using JSON.</p>
+                <a href="007-store-array-using-json.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>08. Store a JavaScript Object</h3>
+                <p>Save an object in localStorage using JSON.</p>
+                <a href="008-store-javascript-object.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>09. Student Record System</h3>
+                <p>Create and display student records.</p>
+                <a href="009-student-record-system.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>10. To-Do List</h3>
+                <p>Add and delete tasks with persistent storage.</p>
+                <a href="010-to-do-list-using-localstorage.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>11. Notes Application</h3>
+                <p>Save and retrieve notes using localStorage.</p>
+                <a href="011-notes-application-using-localstorage.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>12. Shopping Cart</h3>
+                <p>Store shopping cart items in localStorage.</p>
+                <a href="012-shopping-cart-using-localstorage.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>13. Login Preference</h3>
+                <p>Remember a username preference on the device.</p>
+                <a href="013-login-preference-system.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>14. Dark/Light Theme</h3>
+                <p>Switch between themes and save the preference.</p>
+                <a href="014-dark-light-theme-using-localstorage.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>15. Preferred Font Size</h3>
+                <p>Save and restore the user's preferred font size.</p>
+                <a href="015-save-preferred-font-size.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>16. Recently Viewed Items</h3>
+                <p>Keep a list of recently viewed products.</p>
+                <a href="016-recently-viewed-items.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>17. Visitor Counter</h3>
+                <p>Count page visits using browser storage.</p>
+                <a href="017-visitor-counter.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>18. Storage Comparison</h3>
+                <p>Compare localStorage with sessionStorage.</p>
+                <a href="018-compare-localstorage-and-sessionstorage.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>19. Temporary Form Data</h3>
+                <p>Store temporary form data in sessionStorage.</p>
+                <a href="019-temporary-form-data-using-sessionstorage.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>20. Multi-Page Form</h3>
+                <p>Keep form information between form steps.</p>
+                <a href="020-multi-page-form-using-sessionstorage.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>21. Auto-Save Form</h3>
+                <p>Automatically save form data while typing.</p>
+                <a href="021-auto-save-form-data.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>22. Restore Form Data</h3>
+                <p>Restore previously entered data after refreshing.</p>
+                <a href="022-restore-form-data-after-refresh.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>23. Persistent Shopping Cart</h3>
+                <p>Keep cart items after refreshing the page.</p>
+                <a href="023-persistent-shopping-cart.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>24. Student Marks Database</h3>
+                <p>Store and display student marks records.</p>
+                <a href="024-student-marks-database.html">Open Program</a>
+            </div>
+
+            <div class="program">
+                <h3>25. CRUD Application</h3>
+                <p>Create, read, update and delete records.</p>
+                <a href="025-crud-application-using-localstorage.html">Open Program</a>
+            </div>
+
+        </div>
+    </main>
+
+    <section class="container" id="about">
+        <h2 class="section-title">About This Project</h2>
+        <p style="text-align: center; line-height: 1.8;">
+            This project demonstrates browser storage features using JavaScript.
+            localStorage keeps data after the browser is closed, while sessionStorage
+            keeps data for the current page session.
+        </p>
+    </section>
+
+    <footer>
+        <p>Web Technology Practical Programs | JavaScript Web Storage</p>
+    </footer>
+
+</body>
+</html>
+```

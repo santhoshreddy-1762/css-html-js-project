@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head><title>Storage Comparison</title></head>
+<body>
+    <h2>localStorage vs sessionStorage</h2>
+
+    <input id="data" placeholder="Enter a message">
+    <button onclick="saveLocal()">Save Local</button>
+    <button onclick="saveSession()">Save Session</button>
+    <button onclick="displayData()">Display Data</button>
+
+    <p id="output"></p>
+
+    <script>
+        function saveLocal() {
+            localStorage.setItem(
+                "message",
+                document.getElementById("data").value
+            );
+        }
+
+        function saveSession() {
+            sessionStorage.setItem(
+                "message",
+                document.getElementById("data").value
+            );
+        }
+
+        function displayData() {
+            document.getElementById("output").innerText =
+                "localStorage: " +
+                (localStorage.getItem("message") || "No data") +
+                " | sessionStorage: " +
+                (sessionStorage.getItem("message") || "No data");
+        }
+    </script>
+</body>
+</html>

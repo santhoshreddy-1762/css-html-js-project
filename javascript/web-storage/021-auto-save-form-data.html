@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Auto-Save Form</title></head>
+<body>
+    <h2>Auto-Save Form</h2>
+
+    <input id="name" placeholder="Enter name">
+    <br><br>
+    <textarea id="message" placeholder="Enter message"></textarea>
+    <p id="output"></p>
+
+    <script>
+        let nameInput = document.getElementById("name");
+        let messageInput = document.getElementById("message");
+
+        nameInput.value = localStorage.getItem("autoName") || "";
+        messageInput.value = localStorage.getItem("autoMessage") || "";
+
+        nameInput.addEventListener("input", function() {
+            localStorage.setItem("autoName", nameInput.value);
+            document.getElementById("output").innerText = "Data saved";
+        });
+
+        messageInput.addEventListener("input", function() {
+            localStorage.setItem("autoMessage", messageInput.value);
+            document.getElementById("output").innerText = "Data saved";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head><title>Multi-Page Form</title></head>
+<body>
+    <h2>Student Registration</h2>
+
+    <div id="step1">
+        <h3>Step 1: Personal Details</h3>
+        <input id="name" placeholder="Name">
+        <button onclick="nextStep()">Next</button>
+    </div>
+
+    <div id="step2" hidden>
+        <h3>Step 2: Course Details</h3>
+        <input id="course" placeholder="Course">
+        <button onclick="previousStep()">Back</button>
+        <button onclick="finish()">Submit</button>
+    </div>
+
+    <p id="output"></p>
+
+    <script>
+        function nextStep() {
+            let name = document.getElementById("name").value.trim();
+
+            if (!name) {
+                alert("Enter your name");
+                return;
+            }
+
+            sessionStorage.setItem("formName", name);
+            document.getElementById("step1").hidden = true;
+            document.getElementById("step2").hidden = false;
+        }
+
+        function previousStep() {
+            sessionStorage.setItem(
+                "formCourse",
+                document.getElementById("course").value
+            );
+
+            document.getElementById("step2").hidden = true;
+            document.getElementById("step1").hidden = false;
+        }
+
+        function finish() {
+            let course = document.getElementById("course").value.trim();
+
+            if (!course) {
+                alert("Enter your course");
+                return;
+            }
+
+            sessionStorage.setItem("formCourse", course);
+
+            document.getElementById("output").innerText =
+                "Name: " + sessionStorage.getItem("formName") +
+                ", Course: " + sessionStorage.getItem("formCourse");
+
+            sessionStorage.removeItem("formName");
+            sessionStorage.removeItem("formCourse");
+        }
+
+        document.getElementById("name").value =
+            sessionStorage.getItem("formName") || "";
+        document.getElementById("course").value =
+            sessionStorage.getItem("formCourse") || "";
+    </script>
+</body>
+</html>

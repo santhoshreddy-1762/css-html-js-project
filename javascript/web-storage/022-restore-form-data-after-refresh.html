@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Restore Form Data</title></head>
+<body>
+    <h2>Form Data Restoration</h2>
+
+    <input id="name" placeholder="Enter name">
+    <input id="city" placeholder="Enter city">
+
+    <script>
+        let name = document.getElementById("name");
+        let city = document.getElementById("city");
+
+        name.value = localStorage.getItem("restoreName") || "";
+        city.value = localStorage.getItem("restoreCity") || "";
+
+        name.addEventListener("input", function() {
+            localStorage.setItem("restoreName", name.value);
+        });
+
+        city.addEventListener("input", function() {
+            localStorage.setItem("restoreCity", city.value);
+        });
+    </script>
+</body>
+</html>

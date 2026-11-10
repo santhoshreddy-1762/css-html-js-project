@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retrieve Data</title>
+</head>
+<body>
+    <h2>Retrieve Username</h2>
+    <button onclick="showUser()">Display Username</button>
+    <p id="output"></p>
+
+    <script>
+        function showUser() {
+            let name = localStorage.getItem("username");
+            document.getElementById("output").innerText =
+                name ? "Username: " + name : "No username found";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Store Username</title>
+</head>
+<body>
+    <h2>Store Username</h2>
+    <input id="username" placeholder="Enter username">
+    <button onclick="saveUser()">Save</button>
+    <p id="output"></p>
+
+    <script>
+        function saveUser() {
+            let name = document.getElementById("username").value;
+            localStorage.setItem("username", name);
+            document.getElementById("output").innerText =
+                "Username saved: " + name;
+        }
+    </script>
+</body>
+</html>

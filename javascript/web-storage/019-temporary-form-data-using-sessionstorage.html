@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head><title>Temporary Form Data</title></head>
+<body>
+    <h2>Temporary Form</h2>
+
+    <input id="name" placeholder="Enter name">
+    <input id="email" placeholder="Enter email">
+    <button onclick="saveData()">Save Temporarily</button>
+    <button onclick="showData()">Display Data</button>
+
+    <p id="output"></p>
+
+    <script>
+        function saveData() {
+            sessionStorage.setItem("name",
+                document.getElementById("name").value);
+            sessionStorage.setItem("email",
+                document.getElementById("email").value);
+
+            document.getElementById("output").innerText =
+                "Temporary data saved";
+        }
+
+        function showData() {
+            document.getElementById("output").innerText =
+                "Name: " + (sessionStorage.getItem("name") || "") +
+                ", Email: " + (sessionStorage.getItem("email") || "");
+        }
+
+        document.getElementById("name").value =
+            sessionStorage.getItem("name") || "";
+        document.getElementById("email").value =
+            sessionStorage.getItem("email") || "";
+    </script>
+</body>
+</html>

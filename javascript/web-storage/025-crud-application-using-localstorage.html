@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 25px;
+        }
+
+        input, button {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student CRUD Application</h2>
+
+    <input id="name" placeholder="Student name">
+    <input id="course" placeholder="Course">
+    <button onclick="saveRecord()">Save Record</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="records"></tbody>
+    </table>
+
+    <script>
+        let editIndex = -1;
+
+        function getRecords() {
+            return JSON.parse(localStorage.getItem("crudRecords") || "[]");
+        }
+
+        function saveRecord() {
+            let name = document.getElementById("name").value.trim();
+            let course = document.getElementById("course").value.trim();
+
+            if (!name || !course) {
+                alert("Enter name and course");
+                return;
+            }
+
+            let records = getRecords();
+            let record = { name: name, course: course };
+
+            if (editIndex === -1) {
+                records.push(record);
+            } else {
+                records[editIndex] = record;
+                editIndex = -1;
+            }
+
+            localStorage.setItem("crudRecords", JSON.stringify(records));
+
+            document.getElementById("name").value = "";
+            document.getElementById("course").value = "";
+
+            displayRecords();
+        }
+
+        function editRecord(index) {
+            let records = getRecords();
+
+            document.getElementById("name").value = records[index].name;
+            document.getElementById("course").value = records[index].course;
+
+            editIndex = index;
+        }
+
+        function deleteRecord(index) {
+            let records = getRecords();
+            records.splice(index, 1);
+
+            localStorage.setItem("crudRecords", JSON.stringify(records));
+
+            if (editIndex === index) {
+                editIndex = -1;
+                document.getElementById("name").value = "";
+                document.getElementById("course").value = "";
+            } else if (editIndex > index) {
+                editIndex--;
+            }
+
+            displayRecords();
+        }
+
+        function displayRecords() {
+            let records = getRecords();
+            let tbody = document.getElementById("records");
+            tbody.innerHTML = "";
+
+            records.forEach((record, index) => {
+                let row = tbody.insertRow();
+
+                row.insertCell().textContent = record.name;
+                row.insertCell().textContent = record.course;
+
+                let actions = row.insertCell();
+
+                let editButton = document.createElement("button");
+                editButton.textContent = "Edit";
+                editButton.onclick = () => editRecord(index);
+
+                let deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.onclick = () => deleteRecord(index);
+
+                actions.append(editButton, deleteButton);
+            });
+        }
+
+        displayRecords();
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><title>Recently Viewed Items</title></head>
+<body>
+    <h2>Products</h2>
+    <button onclick="viewItem('Laptop')">Laptop</button>
+    <button onclick="viewItem('Mobile')">Mobile</button>
+    <button onclick="viewItem('Headphones')">Headphones</button>
+
+    <h3>Recently Viewed</h3>
+    <ul id="list"></ul>
+
+    <script>
+        function viewItem(item) {
+            let items = JSON.parse(localStorage.getItem("recent") || "[]");
+            items = items.filter(x => x !== item);
+            items.unshift(item);
+            items = items.slice(0, 5);
+
+            localStorage.setItem("recent", JSON.stringify(items));
+            displayItems();
+        }
+
+        function displayItems() {
+            let list = document.getElementById("list");
+            list.innerHTML = "";
+
+            JSON.parse(localStorage.getItem("recent") || "[]")
+                .forEach(item => {
+                    let li = document.createElement("li");
+                    li.textContent = item;
+                    list.appendChild(li);
+                });
+        }
+
+        displayItems();
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head><title>Student Marks Database</title></head>
+<body>
+    <h2>Student Marks Database</h2>
+
+    <input id="name" placeholder="Student name">
+    <input id="marks" type="number" min="0" max="100" placeholder="Marks">
+    <button onclick="addStudent()">Add Record</button>
+
+    <table border="1" cellpadding="8">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody id="records"></tbody>
+    </table>
+
+    <script>
+        function getRecords() {
+            return JSON.parse(localStorage.getItem("marksDB") || "[]");
+        }
+
+        function addStudent() {
+            let name = document.getElementById("name").value.trim();
+            let marksValue = document.getElementById("marks").value;
+            let marks = Number(marksValue);
+
+            if (!name || marksValue === "" || marks < 0 || marks > 100) {
+                alert("Enter a name and marks between 0 and 100");
+                return;
+            }
+
+            let records = getRecords();
+            records.push({ name: name, marks: marks });
+            localStorage.setItem("marksDB", JSON.stringify(records));
+
+            document.getElementById("name").value = "";
+            document.getElementById("marks").value = "";
+            displayRecords();
+        }
+
+        function displayRecords() {
+            let records = getRecords();
+            let tbody = document.getElementById("records");
+            tbody.innerHTML = "";
+
+            records.forEach(student => {
+                let row = tbody.insertRow();
+                row.insertCell().textContent = student.name;
+                row.insertCell().textContent = student.marks;
+            });
+        }
+
+        displayRecords();
+    </script>
+</body>
+</html>

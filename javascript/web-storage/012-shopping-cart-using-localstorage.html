@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head><title>Shopping Cart</title></head>
+<body>
+    <h2>Shopping Cart</h2>
+    <button onclick="addItem('Book')">Add Book</button>
+    <button onclick="addItem('Pen')">Add Pen</button>
+    <button onclick="clearCart()">Clear Cart</button>
+    <ul id="cart"></ul>
+
+    <script>
+        function getCart() {
+            return JSON.parse(localStorage.getItem("cart") || "[]");
+        }
+
+        function addItem(item) {
+            let cart = getCart();
+            cart.push(item);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        }
+
+        function clearCart() {
+            localStorage.removeItem("cart");
+            displayCart();
+        }
+
+        function displayCart() {
+            let list = document.getElementById("cart");
+            list.innerHTML = "";
+
+            getCart().forEach(item => {
+                let li = document.createElement("li");
+                li.textContent = item;
+                list.appendChild(li);
+            });
+        }
+
+        displayCart();
+    </script>
+</body>
+</html>
