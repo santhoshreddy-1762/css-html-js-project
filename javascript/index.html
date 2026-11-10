@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript Practical Programs">
+    <title>JavaScript Practical Programs</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+            color: #cbd5e1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .number {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #64748b;
+            font-size: 15px;
+            line-height: 1.6;
+            min-height: 50px;
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            display: inline-block;
+            text-decoration: none;
+            background: #2563eb;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .card a:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 26px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                width: 92%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>JavaScript Practical Programs</h1>
+    <p>JavaScript Programs and Practical Experiments</p>
+</header>
+
+<main class="container">
+    <div class="card">
+        <span class="number">01</span>
+        <h2>Advanced JavaScript Lab Questions</h2>
+        <p>Advanced JavaScript practical programs and laboratory questions.</p>
+        <a href="advanced-javascript-lab-questions/index.html">View Programs</a>
+    </div>
+
+    <div class="card">
+        <span class="number">02</span>
+        <h2>Browser Storage</h2>
+        <p>Programs demonstrating browser storage using JavaScript.</p>
+        <a href="browser-storage/index.html">View Programs</a>
+    </div>
+
+    <div class="card">
+        <span class="number">03</span>
+        <h2>DOM Event-Based Experiments</h2>
+        <p>DOM and event-based JavaScript practical experiments.</p>
+        <a href="dom-event-based-experiments/index.html">View Programs</a>
+    </div>
+    
+    <div class="card">
+        <span class="number">04</span>
+        <h2>DOM Manipulation</h2>
+        <p>Programs for manipulating HTML elements using JavaScript.</p>
+        <a href="dom-manipulation/index.html">View Programs</a>
+    </div>
+
+    <div class="card">
+        <span class="number">05</span>
+        <h2>Forms Validation</h2>
+        <p>JavaScript programs for form validation and input checking.</p>
+        <a href="forms-validation/index.html">View Programs</a>
+    </div>
+
+    <div class="card">
+        <span class="number">06</span>
+        <h2>JavaScript Basics</h2>
+        <p>Basic JavaScript programs and fundamental concepts.</p>
+        <a href="javascript-basics/index.html">View Programs</a>
+    </div>
+
+     <div class="card">
+        <span class="number">07</span>
+        <h2>JavaScript Events</h2>
+        <p>Programs based on JavaScript events and event handling.</p>
+        <a href="javascript-events/index.html">View Programs</a>
+    </div>
+    
+    <div class="card">
+        <span class="number">08</span>
+        <h2>Mini Projects</h2>
+        <p>Small interactive projects created using JavaScript.</p>
+        <a href="mini-projects/index.html">View Projects</a>
+    </div>
+
+    <div class="card">
+        <span class="number">09</span>
+        <h2>Web Storage</h2>
+        <p>Programs using localStorage and sessionStorage.</p>
+        <a href="web-storage/index.html">View Programs</a>
+    </div>
+    
+
+</main>
+
+<footer>
+    <p>JavaScript Practical Programs | Web Technology</p>
+</footer>
+
+</body>
+</html>
