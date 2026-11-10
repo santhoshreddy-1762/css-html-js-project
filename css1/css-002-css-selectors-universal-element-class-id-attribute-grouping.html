@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selectors</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        p {
+            color: blue;
+        }
+
+        .box {
+            background: lightgreen;
+            padding: 15px;
+        }
+
+        #title {
+            color: red;
+        }
+
+        input[type="text"] {
+            border: 2px solid purple;
+            padding: 8px;
+        }
+
+        h2, h3 {
+            color: darkorange;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="title">ID Selector</h1>
+    <h2>Grouping Selector</h2>
+    <h3>Another Grouped Element</h3>
+
+    <p>Element Selector</p>
+
+    <div class="box">Class Selector</div>
+
+    <br>
+    <input type="text" placeholder="Attribute Selector">
+
+</body>
+</html>
