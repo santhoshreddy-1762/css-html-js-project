@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Screen Dimensions</title>
+</head>
+<body>
+    <h2>Screen Information</h2>
+    <p id="result"></p>
+
+    <script>
+        function showScreen() {
+            document.getElementById("result").innerHTML =
+                "Screen Width: " + screen.width + " pixels<br>" +
+                "Screen Height: " + screen.height + " pixels<br>" +
+                "Available Width: " + screen.availWidth + " pixels<br>" +
+                "Available Height: " + screen.availHeight + " pixels<br>" +
+                "Browser Window Width: " + window.innerWidth + " pixels<br>" +
+                "Browser Window Height: " + window.innerHeight + " pixels";
+        }
+
+        showScreen();
+        window.addEventListener("resize", showScreen);
+    </script>
+</body>
+</html>

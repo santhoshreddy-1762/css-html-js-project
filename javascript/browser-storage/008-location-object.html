@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location Object</title>
+</head>
+<body>
+    <h2>JavaScript Location Object</h2>
+    <button onclick="showLocation()">Show Location Details</button>
+    <p id="result"></p>
+
+    <script>
+        function showLocation() {
+            const loc = window.location;
+
+            document.getElementById("result").innerHTML =
+                "Full URL: " + loc.href + "<br>" +
+                "Hostname: " + loc.hostname + "<br>" +
+                "Protocol: " + loc.protocol + "<br>" +
+                "Pathname: " + loc.pathname + "<br>" +
+                "Port: " + (loc.port || "Default") + "<br>" +
+                "Origin: " + loc.origin;
+        }
+    </script>
+</body>
+</html>

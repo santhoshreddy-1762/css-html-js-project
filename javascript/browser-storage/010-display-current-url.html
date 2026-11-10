@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Current Webpage URL</title>
+</head>
+<body>
+    <h2>Current Webpage URL</h2>
+    <p id="url"></p>
+    <button onclick="displayURL()">Show URL</button>
+
+    <script>
+        function displayURL() {
+            document.getElementById("url").textContent =
+                window.location.href;
+        }
+
+        displayURL();
+    </script>
+</body>
+</html>

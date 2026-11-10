@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geographical Coordinates</title>
+</head>
+<body>
+    <h2>My Current Coordinates</h2>
+    <button onclick="getCoordinates()">Get Coordinates</button>
+    <p id="result"></p>
+
+    <script>
+        function getCoordinates() {
+            const result = document.getElementById("result");
+
+            if (!navigator.geolocation) {
+                result.textContent = "Geolocation is not supported.";
+                return;
+            }
+
+            result.textContent = "Getting coordinates...";
+
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+
+                    result.innerHTML =
+                        "Latitude: " + latitude + "<br>" +
+                        "Longitude: " + longitude + "<br>" +
+                        "Accuracy: " +
+                        position.coords.accuracy.toFixed(2) + " metres";
+                },
+                function(error) {
+                    result.textContent =
+                        "Could not get coordinates: " + error.message;
+                },
+                { enableHighAccuracy: true, timeout: 10000 }
+            );
+        }
+    </script>
+</body>
+</html>

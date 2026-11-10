@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser History Buttons</title>
+</head>
+<body>
+    <h2>Browser History Operations</h2>
+    <button onclick="goBack()">Back</button>
+    <button onclick="goForward()">Forward</button>
+    <button onclick="reloadPage()">Reload</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function goForward() {
+            window.history.forward();
+        }
+
+        function reloadPage() {
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>

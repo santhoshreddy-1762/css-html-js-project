@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>setInterval Example</title>
+</head>
+<body>
+    <h2>setInterval Example</h2>
+    <h1 id="count">0</h1>
+    <button onclick="startCount()">Start</button>
+    <button onclick="stopCount()">Stop</button>
+    <button onclick="resetCount()">Reset</button>
+
+    <script>
+        let count = 0;
+        let interval = null;
+
+        function startCount() {
+            if (interval !== null) return;
+
+            interval = setInterval(function() {
+                count++;
+                document.getElementById("count").textContent = count;
+            }, 1000);
+        }
+
+        function stopCount() {
+            clearInterval(interval);
+            interval = null;
+        }
+
+        function resetCount() {
+            stopCount();
+            count = 0;
+            document.getElementById("count").textContent = count;
+        }
+    </script>
+</body>
+</html>

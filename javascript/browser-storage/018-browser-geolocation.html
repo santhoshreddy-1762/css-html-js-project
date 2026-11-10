@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser Geolocation</title>
+</head>
+<body>
+    <h2>Geolocation API</h2>
+    <p>Click the button to request your location.</p>
+    <button onclick="getLocation()">Get My Location</button>
+    <p id="result"></p>
+
+    <script>
+        function getLocation() {
+            const result = document.getElementById("result");
+
+            if (!navigator.geolocation) {
+                result.textContent = "Geolocation is not supported.";
+                return;
+            }
+
+            result.textContent = "Requesting location permission...";
+
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    result.textContent =
+                        "Location permission granted. Coordinates received.";
+                },
+                function(error) {
+                    result.textContent =
+                        error.code === 1 ? "Location permission denied." :
+                        error.code === 2 ? "Location unavailable." :
+                        error.code === 3 ? "Location request timed out." :
+                        "Unable to retrieve location.";
+                }
+            );
+        }
+    </script>
+</body>
+</html>

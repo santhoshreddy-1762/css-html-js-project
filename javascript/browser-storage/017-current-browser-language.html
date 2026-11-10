@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser Language</title>
+</head>
+<body>
+    <h2>Browser Language Information</h2>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("result").innerHTML =
+            "Preferred Language: " + navigator.language + "<br>" +
+            "All Preferred Languages: " +
+            (navigator.languages || [navigator.language]).join(", ");
+    </script>
+</body>
+</html>

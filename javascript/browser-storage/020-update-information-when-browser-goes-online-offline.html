@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Offline Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 60px 20px;
+            background: #f2f7fb;
+        }
+
+        #status {
+            display: inline-block;
+            padding: 18px 30px;
+            border-radius: 10px;
+            font-size: 22px;
+            color: white;
+        }
+
+        .online {
+            background: green;
+        }
+
+        .offline {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Internet Connection Monitor</h1>
+    <p id="status"></p>
+    <p id="message"></p>
+
+    <script>
+        function updateStatus() {
+            const status = document.getElementById("status");
+            const message = document.getElementById("message");
+
+            if (navigator.onLine) {
+                status.textContent = "ONLINE";
+                status.className = "online";
+                message.textContent =
+                    "The browser reports that a network connection is available.";
+            } else {
+                status.textContent = "OFFLINE";
+                status.className = "offline";
+                message.textContent =
+                    "The browser reports that the network connection is unavailable.";
+            }
+        }
+
+        window.addEventListener("online", updateStatus);
+        window.addEventListener("offline", updateStatus);
+
+        updateStatus();
+    </script>
+</body>
+</html>

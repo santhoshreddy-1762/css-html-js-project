@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser Information</title>
+</head>
+<body>
+    <h2>Browser Information</h2>
+    <p id="info"></p>
+
+    <script>
+        const nav = navigator;
+
+        document.getElementById("info").innerHTML =
+            "User Agent: " + nav.userAgent + "<br><br>" +
+            "Language: " + nav.language + "<br><br>" +
+            "Cookies Enabled: " + nav.cookieEnabled + "<br><br>" +
+            "Online: " + nav.onLine + "<br><br>" +
+            "Platform: " + nav.platform;
+    </script>
+</body>
+</html>

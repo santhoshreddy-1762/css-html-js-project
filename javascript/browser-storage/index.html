@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Objects | JavaScript Practical</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #0b3d91;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0b3d91, #168aad);
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .hero h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 17px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #0b3d91;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .program {
+            background: white;
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #168aad;
+        }
+
+        .program h3 {
+            color: #0b3d91;
+            margin-bottom: 10px;
+        }
+
+        .program p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .program a {
+            display: inline-block;
+            background: #0b3d91;
+            color: white;
+            padding: 9px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .program a:hover {
+            background: #168aad;
+        }
+
+        .number {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0b3d91;
+            padding: 4px 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #0b3d91;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Browser Objects</div>
+
+        <nav>
+            <a href="../index.html">JavaScript</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Browser Objects &amp; Features</h1>
+        <p>JavaScript browser-based practical programs</p>
+    </section>
+
+    <main class="container">
+        <h2 class="section-title">Browser Storage &amp; Objects Programs</h2>
+
+        <div class="program-grid">
+
+            <div class="program">
+                <span class="number">Program 01</span>
+                <h3>Window Object</h3>
+                <p>Learn about the JavaScript window object and browser window properties.</p>
+                <a href="001-window-object.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 02</span>
+                <h3>Alert, Confirm &amp; Prompt</h3>
+                <p>Display alert messages, confirmation dialogs, and input prompts.</p>
+                <a href="002-alert-confirm-and-prompt.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 03</span>
+                <h3>setTimeout()</h3>
+                <p>Execute a function after a specified delay.</p>
+                <a href="003-settimeout.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 04</span>
+                <h3>setInterval()</h3>
+                <p>Execute a function repeatedly at regular intervals.</p>
+                <a href="004-setinterval.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 05</span>
+                <h3>Digital Clock</h3>
+                <p>Create a digital clock using JavaScript timer functions.</p>
+                <a href="005-digital-clock-with-setinterval.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 06</span>
+                <h3>Countdown Timer</h3>
+                <p>Build a countdown timer with JavaScript.</p>
+                <a href="006-countdown-timer.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 07</span>
+                <h3>Stopwatch</h3>
+                <p>Measure elapsed time using JavaScript.</p>
+                <a href="007-stopwatch.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 08</span>
+                <h3>Location Object</h3>
+                <p>Access the current page URL and location properties.</p>
+                <a href="008-location-object.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 09</span>
+                <h3>Redirect to Another Page</h3>
+                <p>Navigate to another webpage using JavaScript.</p>
+                <a href="009-redirect-to-another-webpage.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 10</span>
+                <h3>Current URL</h3>
+                <p>Display the URL of the current webpage.</p>
+                <a href="010-display-current-url.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 11</span>
+                <h3>History Object</h3>
+                <p>Learn how browser history works in JavaScript.</p>
+                <a href="011-history-object.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 12</span>
+                <h3>Back, Forward &amp; Reload</h3>
+                <p>Navigate browser history and reload the current page.</p>
+                <a href="012-back-forward-and-reload-buttons.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 13</span>
+                <h3>Navigator Object</h3>
+                <p>Display browser information using the navigator object.</p>
+                <a href="013-navigator-object.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 14</span>
+                <h3>Browser Information</h3>
+                <p>Display information about the browser environment.</p>
+                <a href="014-display-browser-information.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 15</span>
+                <h3>Screen Width &amp; Height</h3>
+                <p>Display the screen dimensions using JavaScript.</p>
+                <a href="015-display-screen-width-and-height.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 16</span>
+                <h3>Online &amp; Offline Detection</h3>
+                <p>Check the browser's online and offline status.</p>
+                <a href="016-online-offline-detection.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 17</span>
+                <h3>Browser Language</h3>
+                <p>Display the preferred language of the browser.</p>
+                <a href="017-current-browser-language.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 18</span>
+                <h3>Browser Geolocation</h3>
+                <p>Learn how browser geolocation requests access to location.</p>
+                <a href="018-browser-geolocation.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 19</span>
+                <h3>Geographical Coordinates</h3>
+                <p>Retrieve latitude and longitude with permission.</p>
+                <a href="019-display-geographical-coordinates.html">View Program</a>
+            </div>
+
+            <div class="program">
+                <span class="number">Program 20</span>
+                <h3>Online Status Updates</h3>
+                <p>Update webpage information when connectivity changes.</p>
+                <a href="020-update-information-when-browser-goes-online-offline.html">View Program</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 JavaScript Practical Programs | Browser Objects</p>
+    </footer>
+
+</body>
+</html>
