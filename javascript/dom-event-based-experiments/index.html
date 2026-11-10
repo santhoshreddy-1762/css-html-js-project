@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript DOM and Event-Based Practical Programs">
+    <title>JavaScript Practical Programs</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+            color: #cbd5e1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .number {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+
+        .card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        .view-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #2563eb;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .view-btn:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            text-align: center;
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                width: 92%;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Practical Programs</h1>
+        <p>DOM & Event-Based Experiments</p>
+    </header>
+
+    <main class="container">
+
+        <div class="card">
+            <span class="number">001</span>
+            <h2>Change Text</h2>
+            <p>Change the text of an HTML element using JavaScript.</p>
+            <a href="001-change-text-using-javascript.html" class="view-btn">View Program</a>
+        </div>
+
+        <div class="card">
+            <span class="number">002</span>
+            <h2>Change Background Color</h2>
+            <p>Change the webpage background color using JavaScript.</p>
+            <a href="002-change-webpage-background-color.html" class="view-btn">View Program</a>
+        </div>
+
+        <div class="card">
+            <span class="number">003</span>
+            <h2>Button Click Event</h2>
+            <p>Create and handle a button click event using JavaScript.</p>
+            <a href="003-button-click-event.html" class="view-btn">View Program</a>
+        </div>
+
+        <div class="card">
+            <span class="number">004</span>
+            <h2>Show / Hide Element</h2>
+            <p>Show or hide an HTML element using JavaScript.</p>
+            <a href="004-show-hide-an-html-element.html" class="view-btn">View Program</a>
+        </div>
+
+        <div class="card">
+            <span class="number">005</span>
+            <h2>Change Image</h2>
+            <p>Change an image when a button is clicked.</p>
+            <a href="005-change-an-image-on-button-click.html" class="view-btn">View Program</a>
+        </div>
+
+        <div class="card">
+            <span class="number">006</span>
+            <h2>Digital Clock</h2>
+            <p>Create a real-time digital clock using JavaScript.</p>
+            <a href="006-digital-clock.html" class="view-btn">View Program</a>
+        </div>
+
+        <div class="card">
+            <span class="number">007</span>
+            <h2>Simple Calculator</h2>
+            <p>Create a calculator using HTML, CSS, and JavaScript.</p>
+            <a href="007-simple-calculator.html-" class="view-btn">View Program</a>
+        </div>
+
+        <div class="card">
+            <span class="number">008</span>
+            <h2>Number Guessing Game</h2>
+            <p>Create a game where the user guesses a random number.</p>
+            <a href="008-number-guessing-game.html" class="view-btn">View Program</a>
+        </div>
+
+        <div class="card">
+            <span class="number">009</span>
+            <h2>Form Validation</h2>
+            <p>Validate user input using JavaScript.</p>
+            <a href="009-form-validation.html" class="view-btn">View Program</a>
+        </div>
+
+        <div class="card">
+            <span class="number">010</span>
+            <h2>Name, Email, Phone & Password Validation</h2>
+            <p>Validate name, email, phone number, and password.</p>
+            <a href="010-validate-name-email-phone-and-password.html" class="view-btn">View Program</a>
+        </div>
+
+        <div class="card">
+            <span class="number">011</span>
+            <h2>To-Do List</h2>
+            <p>Create a simple task management application.</p>
+            <a href="011-to-do-list.html" class="view-btn">View Program</a>
+        </div>
+
+        <div class="card">
+            <span class="number">012</span>
+            <h2>Quiz Application</h2>
+            <p>Create a simple interactive quiz using JavaScript.</p>
+            <a href="012-quiz-application.html" class="view-btn">View Program</a>
+        </div>
+
+        <div class="card">
+            <span class="number">013</span>
+            <h2>Counter Application</h2>
+            <p>Increase and decrease a number using buttons.</p>
+            <a href="013-counter-with-increment-and-decrement.html" class="view-btn">View Program</a>
+        </div>
+
+        <div class="card">
+            <span class="number">014</span>
+            <h2>Stopwatch</h2>
+            <p>stopwatch.</p>
+            <a href="014-stopwatch.html" class="view-btn">View Program</a>
+        </div>
+
+        <div class="card">
+            <span class="number">015</span>
+            <h2>Countdown Timer</h2>
+            <p>countdown-timer.</p>
+            <a href="015-countdown-timer.html" class="view-btn">View Program</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>JavaScript Practical Programs | Web Technology</p>
+    </footer>
+
+</body>
+</html>
+
