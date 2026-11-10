@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arrays and Array Methods</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 40px; }
+        button { padding: 10px 20px; }
+    </style>
+</head>
+<body>
+
+<h2>18. Arrays and Array Methods</h2>
+
+<button onclick="showMethods()">Show Array Methods</button>
+
+<p id="result"></p>
+
+<script>
+function showMethods() {
+    let fruits = ["Apple", "Banana", "Mango"];
+
+    fruits.push("Orange");
+
+    let joined = fruits.join(", ");
+
+    document.getElementById("result").innerHTML =
+        "Array: " + joined + "<br>" +
+        "Length: " + fruits.length + "<br>" +
+        "First Element: " + fruits[0] + "<br>" +
+        "Last Element: " + fruits[fruits.length - 1];
+}
+</script>
+
+</body>
+</html>

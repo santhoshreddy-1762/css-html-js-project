@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sort Array</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 40px; }
+        button { padding: 10px 20px; }
+    </style>
+</head>
+<body>
+
+<h2>13. Sort an Array</h2>
+
+<button onclick="sortArray()">Sort Array</button>
+
+<p id="result"></p>
+
+<script>
+function sortArray() {
+    let arr = [50, 10, 80, 20, 40];
+
+    arr.sort(function(a, b) {
+        return a - b;
+    });
+
+    document.getElementById("result").innerHTML =
+        "Sorted Array: " + arr.join(", ");
+}
+</script>
+
+</body>
+</html>

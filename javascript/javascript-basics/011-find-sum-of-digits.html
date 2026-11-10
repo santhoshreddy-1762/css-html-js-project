@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of Digits</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 40px; }
+        input, button { padding: 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+
+<h2>11. Sum of Digits</h2>
+
+<input type="number" id="num" placeholder="Enter number">
+<button onclick="sumDigits()">Calculate</button>
+
+<p id="result"></p>
+
+<script>
+function sumDigits() {
+    let num = Math.abs(Number(document.getElementById("num").value));
+    let sum = 0;
+
+    while (num > 0) {
+        sum += num % 10;
+        num = Math.floor(num / 10);
+    }
+
+    document.getElementById("result").innerHTML =
+        "Sum of digits: " + sum;
+}
+</script>
+
+</body>
+</html>

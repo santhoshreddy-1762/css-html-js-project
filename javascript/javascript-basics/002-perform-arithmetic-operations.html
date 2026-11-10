@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Operations</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 40px; }
+        input, button { padding: 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+
+<h2>2. Arithmetic Operations</h2>
+
+<input type="number" id="a" placeholder="First number">
+<input type="number" id="b" placeholder="Second number">
+<br>
+<button onclick="calculate()">Calculate</button>
+
+<p id="result"></p>
+
+<script>
+function calculate() {
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+
+    document.getElementById("result").innerHTML =
+        "Addition: " + (a + b) + "<br>" +
+        "Subtraction: " + (a - b) + "<br>" +
+        "Multiplication: " + (a * b) + "<br>" +
+        "Division: " + (a / b);
+}
+</script>
+
+</body>
+</html>

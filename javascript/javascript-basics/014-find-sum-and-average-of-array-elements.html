@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum and Average</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 40px; }
+        button { padding: 10px 20px; }
+    </style>
+</head>
+<body>
+
+<h2>14. Sum and Average of Array</h2>
+
+<button onclick="calculate()">Calculate</button>
+
+<p id="result"></p>
+
+<script>
+function calculate() {
+    let arr = [10, 20, 30, 40, 50];
+
+    let sum = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+
+    let average = sum / arr.length;
+
+    document.getElementById("result").innerHTML =
+        "Array: " + arr.join(", ") + "<br>" +
+        "Sum: " + sum + "<br>" +
+        "Average: " + average;
+}
+</script>
+
+</body>
+</html>

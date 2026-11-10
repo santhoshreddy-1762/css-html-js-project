@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Objects</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 40px; }
+        button { padding: 10px 20px; }
+    </style>
+</head>
+<body>
+
+<h2>19. JavaScript Objects</h2>
+
+<button onclick="showObject()">Show Object</button>
+
+<p id="result"></p>
+
+<script>
+function showObject() {
+    let student = {
+        name: "Santhosh",
+        age: 21,
+        department: "CSE",
+        college: "University"
+    };
+
+    document.getElementById("result").innerHTML =
+        "Name: " + student.name + "<br>" +
+        "Age: " + student.age + "<br>" +
+        "Department: " + student.department + "<br>" +
+        "College: " + student.college;
+}
+</script>
+
+</body>
+</html>

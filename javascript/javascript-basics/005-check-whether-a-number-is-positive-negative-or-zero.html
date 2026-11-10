@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Positive Negative Zero</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 40px; }
+        input, button { padding: 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+
+<h2>5. Positive, Negative or Zero</h2>
+
+<input type="number" id="num" placeholder="Enter number">
+<button onclick="checkNumber()">Check</button>
+
+<p id="result"></p>
+
+<script>
+function checkNumber() {
+    let num = Number(document.getElementById("num").value);
+
+    if (num > 0) {
+        document.getElementById("result").innerHTML = "Positive Number";
+    } else if (num < 0) {
+        document.getElementById("result").innerHTML = "Negative Number";
+    } else {
+        document.getElementById("result").innerHTML = "Zero";
+    }
+}
+</script>
+
+</body>
+</html>

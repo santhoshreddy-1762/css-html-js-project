@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palindrome</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 40px; }
+        input, button { padding: 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+
+<h2>9. Palindrome Number</h2>
+
+<input type="number" id="num" placeholder="Enter number">
+<button onclick="checkPalindrome()">Check</button>
+
+<p id="result"></p>
+
+<script>
+function checkPalindrome() {
+    let num = document.getElementById("num").value;
+    let reverse = num.split("").reverse().join("");
+
+    document.getElementById("result").innerHTML =
+        num === reverse ? "Palindrome Number" : "Not a Palindrome";
+}
+</script>
+
+</body>
+</html>

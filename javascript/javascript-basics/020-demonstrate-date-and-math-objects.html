@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date and Math Objects</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 40px; }
+        button { padding: 10px 20px; }
+    </style>
+</head>
+<body>
+
+<h2>20. Date and Math Objects</h2>
+
+<button onclick="showObjects()">Show Date and Math</button>
+
+<p id="result"></p>
+
+<script>
+function showObjects() {
+    let date = new Date();
+
+    let number = 25;
+
+    document.getElementById("result").innerHTML =
+        "Current Date: " + date + "<br>" +
+        "Square Root of 25: " + Math.sqrt(number) + "<br>" +
+        "Power 2^5: " + Math.pow(2, 5) + "<br>" +
+        "Random Number: " + Math.random().toFixed(2) + "<br>" +
+        "Maximum: " + Math.max(10, 20, 30) + "<br>" +
+        "Minimum: " + Math.min(10, 20, 30);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Strings and String Methods</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 40px; }
+        button { padding: 10px 20px; }
+    </style>
+</head>
+<body>
+
+<h2>17. Strings and String Methods</h2>
+
+<button onclick="showMethods()">Show Methods</button>
+
+<p id="result"></p>
+
+<script>
+function showMethods() {
+    let text = "JavaScript";
+
+    document.getElementById("result").innerHTML =
+        "String: " + text + "<br>" +
+        "Length: " + text.length + "<br>" +
+        "Uppercase: " + text.toUpperCase() + "<br>" +
+        "Lowercase: " + text.toLowerCase() + "<br>" +
+        "First Character: " + text.charAt(0) + "<br>" +
+        "Includes Java: " + text.includes("Java");
+}
+</script>
+
+</body>
+</html>

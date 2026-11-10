@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arrow Functions</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 40px; }
+        button { padding: 10px 20px; }
+    </style>
+</head>
+<body>
+
+<h2>16. Arrow Functions</h2>
+
+<button onclick="showResult()">Run Arrow Function</button>
+
+<p id="result"></p>
+
+<script>
+const add = (a, b) => a + b;
+
+const square = n => n * n;
+
+function showResult() {
+    document.getElementById("result").innerHTML =
+        "Addition: " + add(10, 20) + "<br>" +
+        "Square: " + square(5);
+}
+</script>
+
+</body>
+</html>

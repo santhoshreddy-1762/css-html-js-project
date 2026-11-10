@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Basic Programs</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #222;
+        }
+
+        header {
+            background: #1e3a8a;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: #dbeafe;
+        }
+
+        .hero h1 {
+            margin: 0 0 10px;
+            color: #1e3a8a;
+        }
+
+        .hero p {
+            margin: 0;
+            color: #475569;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .program {
+            background: white;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .program .number {
+            background: #2563eb;
+            color: white;
+            min-width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .program-text {
+            flex: 1;
+            font-size: 17px;
+            color: #1e293b;
+        }
+
+        .program a {
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .program a:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .program {
+                flex-wrap: wrap;
+            }
+
+            .program a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        JavaScript Practical
+    </div>
+
+    <nav>
+        <a href="../index.html">JavaScript</a>
+        <a href="../../index.html">Home</a>
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <h1>JavaScript Basic Programs</h1>
+
+    <p>Fundamental JavaScript practical programs</p>
+
+</section>
+
+<main class="container">
+
+    <div class="program">
+        <span class="number">1</span>
+        <div class="program-text">
+            Display "Hello World"
+        </div>
+        <a href="001-display-hello-world.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">2</span>
+        <div class="program-text">
+            Perform Arithmetic Operations
+        </div>
+        <a href="002-perform-arithmetic-operations.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">3</span>
+        <div class="program-text">
+            Find the Largest of Three Numbers
+        </div>
+        <a href="003-find-the-largest-of-three-numbers.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">4</span>
+        <div class="program-text">
+            Check Whether a Number is Even or Odd
+        </div>
+        <a href="004-check-whether-a-number-is-even-or-odd.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">5</span>
+        <div class="program-text">
+            Check Whether a Number is Positive, Negative, or Zero
+        </div>
+        <a href="005-check-whether-a-number-is-positive-negative-or-zero.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">6</span>
+        <div class="program-text">
+            Find the Factorial of a Number
+        </div>
+        <a href="006-find-factorial-of-a-number.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">7</span>
+        <div class="program-text">
+            Generate the Fibonacci Series
+        </div>
+        <a href="007-generate-fibonacci-series.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">8</span>
+        <div class="program-text">
+            Check Whether a Number is Prime
+        </div>
+        <a href="008-check-whether-a-number-is-prime.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">9</span>
+        <div class="program-text">
+            Check Whether a Number is a Palindrome
+        </div>
+        <a href="009-check-whether-a-number-is-a-palindrome.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">10</span>
+        <div class="program-text">
+            Reverse a Number
+        </div>
+        <a href="010-reverse-a-number.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">11</span>
+        <div class="program-text">
+            Find the Sum of Digits
+        </div>
+        <a href="011-find-sum-of-digits.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">12</span>
+        <div class="program-text">
+            Find Largest and Smallest Array Element
+        </div>
+        <a href="012-find-largest-and-smallest-array-element.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">13</span>
+        <div class="program-text">
+            Sort an Array
+        </div>
+        <a href="013-sort-an-array.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">14</span>
+        <div class="program-text">
+            Find Sum and Average of Array Elements
+        </div>
+        <a href="014-find-sum-and-average-of-array-elements.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">15</span>
+        <div class="program-text">
+            Demonstrate JavaScript Functions
+        </div>
+        <a href="015-demonstrate-javascript-functions.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">16</span>
+        <div class="program-text">
+            Use Arrow Functions
+        </div>
+        <a href="016-use-arrow-functions.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">17</span>
+        <div class="program-text">
+            Demonstrate Strings and String Methods
+        </div>
+        <a href="017-demonstrate-strings-and-string-methods.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">18</span>
+        <div class="program-text">
+            Demonstrate Arrays and Array Methods
+        </div>
+        <a href="018-demonstrate-arrays-and-array-methods.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">19</span>
+        <div class="program-text">
+            Demonstrate Objects in JavaScript
+        </div>
+        <a href="019-demonstrate-objects-in-javascript.html">Open Program</a>
+    </div>
+
+    <div class="program">
+        <span class="number">20</span>
+        <div class="program-text">
+            Demonstrate Date and Math Objects
+        </div>
+        <a href="020-demonstrate-date-and-math-objects.html">Open Program</a>
+    </div>
+
+</main>
+
+<footer>
+
+    <p>JavaScript Practical Programs</p>
+
+</footer>
+
+</body>
+</html>

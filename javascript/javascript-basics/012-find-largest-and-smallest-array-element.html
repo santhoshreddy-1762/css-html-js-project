@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Largest Smallest Array</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 40px; }
+        input, button { padding: 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+
+<h2>12. Largest and Smallest Array Element</h2>
+
+<button onclick="findValues()">Find Values</button>
+
+<p id="result"></p>
+
+<script>
+function findValues() {
+    let arr = [25, 10, 45, 5, 80, 30];
+
+    let largest = Math.max(...arr);
+    let smallest = Math.min(...arr);
+
+    document.getElementById("result").innerHTML =
+        "Array: " + arr.join(", ") + "<br>" +
+        "Largest: " + largest + "<br>" +
+        "Smallest: " + smallest;
+}
+</script>
+
+</body>
+</html>
