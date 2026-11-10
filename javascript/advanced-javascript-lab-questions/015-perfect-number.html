@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Perfect Number</title>
+</head>
+<body>
+    <h2>Perfect Number</h2>
+
+    <input type="number" id="num">
+    <button onclick="checkPerfect()">Check</button>
+
+    <p id="output"></p>
+
+    <script>
+        function checkPerfect() {
+            let num = Number(document.getElementById("num").value);
+            let sum = 0;
+
+            for (let i = 1; i < num; i++) {
+                if (num % i === 0) {
+                    sum += i;
+                }
+            }
+
+            document.getElementById("output").innerHTML =
+                sum === num ? "Perfect Number" : "Not a Perfect Number";
+        }
+    </script>
+</body>
+</html>

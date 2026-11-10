@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spread and Rest</title>
+</head>
+<body>
+    <h2>Spread and Rest Operators</h2>
+    <p id="output"></p>
+
+    <script>
+        let numbers1 = [10, 20, 30];
+        let numbers2 = [40, 50];
+
+        let combined = [...numbers1, ...numbers2];
+
+        function sum(...numbers) {
+            return numbers.reduce((a, b) => a + b, 0);
+        }
+
+        document.getElementById("output").innerHTML =
+            "Spread: " + combined.join(", ") +
+            "<br>Rest Sum: " + sum(10, 20, 30, 40);
+    </script>
+</body>
+</html>

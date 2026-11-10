@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Common Elements</title>
+</head>
+<body>
+    <h2>Common Elements</h2>
+
+    <button onclick="findCommon()">Find</button>
+    <p id="output"></p>
+
+    <script>
+        function findCommon() {
+            let a = [1, 2, 3, 4, 5];
+            let b = [3, 4, 5, 6, 7];
+
+            let common = a.filter(value => b.includes(value));
+
+            document.getElementById("output").innerHTML =
+                common.join(", ");
+        }
+    </script>
+</body>
+</html>

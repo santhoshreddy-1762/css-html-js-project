@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Power</title>
+</head>
+<body>
+    <h2>Power of a Number</h2>
+
+    <input type="number" id="base" placeholder="Base">
+    <input type="number" id="exp" placeholder="Exponent">
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="output"></p>
+
+    <script>
+        function calculate() {
+            let base = Number(document.getElementById("base").value);
+            let exp = Number(document.getElementById("exp").value);
+
+            let result = Math.pow(base, exp);
+
+            document.getElementById("output").innerHTML =
+                "Result = " + result;
+        }
+    </script>
+</body>
+</html>

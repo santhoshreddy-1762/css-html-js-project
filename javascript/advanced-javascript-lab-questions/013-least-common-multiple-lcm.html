@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LCM</title>
+</head>
+<body>
+    <h2>LCM of Two Numbers</h2>
+
+    <input type="number" id="a">
+    <input type="number" id="b">
+    <button onclick="findLCM()">Find LCM</button>
+
+    <p id="output"></p>
+
+    <script>
+        function findLCM() {
+            let a = Number(document.getElementById("a").value);
+            let b = Number(document.getElementById("b").value);
+
+            let x = a;
+            let y = b;
+
+            while (y !== 0) {
+                let temp = y;
+                y = x % y;
+                x = temp;
+            }
+
+            let lcm = Math.abs(a * b) / x;
+
+            document.getElementById("output").innerHTML =
+                "LCM = " + lcm;
+        }
+    </script>
+</body>
+</html>

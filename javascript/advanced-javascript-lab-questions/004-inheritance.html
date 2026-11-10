@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inheritance</title>
+</head>
+<body>
+    <h2>Inheritance</h2>
+    <p id="output"></p>
+
+    <script>
+        class Person {
+            constructor(name) {
+                this.name = name;
+            }
+
+            showName() {
+                return "Name: " + this.name;
+            }
+        }
+
+        class Student extends Person {
+            constructor(name, course) {
+                super(name);
+                this.course = course;
+            }
+
+            showDetails() {
+                return this.showName() + "<br>Course: " + this.course;
+            }
+        }
+
+        let student = new Student("Santhosh", "Computer Science");
+
+        document.getElementById("output").innerHTML = student.showDetails();
+    </script>
+</body>
+</html>

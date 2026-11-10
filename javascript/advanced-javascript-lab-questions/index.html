@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced JavaScript Practical Programs">
+    <title>Advanced JavaScript Practical Programs</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+            color: #cbd5e1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .number {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            font-size: 19px;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #64748b;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .view-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #2563eb;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .view-btn:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                width: 92%;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Advanced JavaScript Practical Programs</h1>
+    <p>ES6, API, Storage, Arrays, Strings and Regular Expressions</p>
+</header>
+
+<main class="container">
+
+    <div class="card">
+        <span class="number">01</span>
+        <h2>ES6 Features</h2>
+        <p>001-es6-let-const-template-literals-and-destructuring.</p>
+        <a href="001-es6-let-const-template-literals-and-destructuring.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">02</span>
+        <h2>Spread and Rest Operators</h2>
+        <p>Demonstrate spread and rest operators in JavaScript.</p>
+        <a href="002-spread-and-rest-operators.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">03</span>
+        <h2>Classes and Objects</h2>
+        <p>Demonstrate classes and objects using JavaScript.</p>
+        <a href="003-classes-and-objects.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">04</span>
+        <h2>Inheritance</h2>
+        <p>Demonstrate inheritance between JavaScript classes.</p>
+        <a href="004-inheritance.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">05</span>
+        <h2>Callbacks, Promises and Async/Await</h2>
+        <p>Demonstrate asynchronous programming techniques.</p>
+        <a href="005-callbacks-promises-and-async-await.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">06</span>
+        <h2>Fetch API</h2>
+        <p>Fetch data from an API using the JavaScript Fetch API.</p>
+        <a href="006-fetch-data-from-an-api.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">07</span>
+        <h2>Display API Data</h2>
+        <p>Display API data dynamically on a webpage.</p>
+        <a href="007-display-api-data-dynamically.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">08</span>
+        <h2>Local Storage</h2>
+        <p>Store and retrieve data using localStorage.</p>
+        <a href="008-store-and-retrieve-data-using-localstorage.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">09</span>
+        <h2>Responsive Login Form</h2>
+        <p>Create a responsive login form with JavaScript validation.</p>
+        <a href="009-responsive-login-form-with-validation.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">10</span>
+        <h2>Interactive Webpage</h2>
+        <p>Create a complete interactive webpage using HTML, CSS and JavaScript.</p>
+        <a href="010-complete-interactive-webpage.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">11</span>
+        <h2>Swap Two Numbers</h2>
+        <p>Write a JavaScript program to swap two numbers.</p>
+        <a href="011-swap-two-numbers.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">12</span>
+        <h2>GCD of Two Numbers</h2>
+        <p>Find the greatest common divisor of two numbers.</p>
+        <a href="012-greatest-common-multiple-lcm.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">13</span>
+        <h2>LCM of Two Numbers</h2>
+        <p>Find the least common multiple of two numbers.</p>
+        <a href="013-least-common-divisor-gcd.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">14</span>
+        <h2>Armstrong Number</h2>
+        <p>Check whether a number is an Armstrong number.</p>
+        <a href="014-armstrong-number.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">15</span>
+        <h2>Perfect Number</h2>
+        <p>Check whether a number is a perfect number.</p>
+        <a href="015-prefect-number.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">16</span>
+        <h2>Multiplication Table</h2>
+        <p>Generate the multiplication table of a given number.</p>
+        <a href="016-multiplication-table.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">17</span>
+        <h2>Power of a Number</h2>
+        <p>Calculate the power of a given number.</p>
+        <a href="017-power-of-a-number.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">18</span>
+        <h2>Count Digits</h2>
+        <p>Count the number of digits in a given number.</p>
+        <a href="018-count-digits.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">19</span>
+        <h2>Second-Largest Element</h2>
+        <p>Find the second-largest element in an array.</p>
+        <a href="019-second-largest-array-element.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">20</span>
+        <h2>Remove Duplicates</h2>
+        <p>Remove duplicate elements from an array.</p>
+        <a href="020-remove-duplicate-array-elements.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">21</span>
+        <h2>Merge Two Arrays</h2>
+        <p>Merge two arrays into a single array.</p>
+        <a href="021-merge-two-arrays.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">22</span>
+        <h2>Array Frequency</h2>
+        <p>Find the frequency of each element in an array.</p>
+        <a href="022-frequency-of-each-array-element.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">23</span>
+        <h2>Common Array Elements</h2>
+        <p>Find common elements in two arrays.</p>
+        <a href="023-common-elements-in-two-arrays.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">24</span>
+        <h2>Reverse String</h2>
+        <p>Write a JavaScript program to reverse a string.</p>
+        <a href="024-reverse-a-string.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">25</span>
+        <h2>String Palindrome</h2>
+        <p>Check whether a string is a palindrome.</p>
+        <a href="025-string-palindrome.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">26</span>
+        <h2>Vowels and Consonants</h2>
+        <p>Count vowels and consonants in a string.</p>
+        <a href="026-count-vowels-and-consonants.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">27</span>
+        <h2>Count Words</h2>
+        <p>Count the number of words in a string.</p>
+        <a href="027-count-words-in-a-string.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">28</span>
+        <h2>Character Frequency</h2>
+        <p>Find the frequency of characters in a string.</p>
+        <a href="028-frequency-of-characters.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">29</span>
+        <h2>Regular Expressions</h2>
+        <p>Demonstrate regular expressions in JavaScript.</p>
+        <a href="029-regular-expressions.html" class="view-btn">View Program</a>
+    </div>
+
+    <div class="card">
+        <span class="number">30</span>
+        <h2>Email Validation</h2>
+        <p>Validate an email address using a regular expression.</p>
+        <a href="030-validate-email-using-regular-expression.html" class="view-btn">View Program</a>
+    </div>
+
+</main>
+
+<footer>
+    <p>JavaScript Practical Programs | Web Technology</p>
+</footer>
+
+</body>
+</html>
+

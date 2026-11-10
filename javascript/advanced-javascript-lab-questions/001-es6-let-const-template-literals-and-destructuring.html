@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ES6 Features</title>
+</head>
+<body>
+    <h2>ES6 Features</h2>
+    <p id="output"></p>
+
+    <script>
+        let name = "Santhosh";
+        const age = 21;
+
+        let message = `My name is ${name} and I am ${age} years old.`;
+
+        let student = {
+            name: "Santhosh",
+            course: "JavaScript"
+        };
+
+        let { name: studentName, course } = student;
+
+        document.getElementById("output").innerHTML =
+            message + "<br>Student: " + studentName + "<br>Course: " + course;
+    </script>
+</body>
+</html>

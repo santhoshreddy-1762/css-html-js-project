@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regular Expression</title>
+</head>
+<body>
+    <h2>Regular Expression</h2>
+
+    <input type="text" id="text" placeholder="Enter text">
+    <button onclick="check()">Check</button>
+
+    <p id="output"></p>
+
+    <script>
+        function check() {
+            let text = document.getElementById("text").value;
+
+            let pattern = /^[A-Za-z]+$/;
+
+            if (pattern.test(text)) {
+                document.getElementById("output").innerHTML =
+                    "Only alphabets are present";
+            } else {
+                document.getElementById("output").innerHTML =
+                    "Other characters are present";
+            }
+        }
+    </script>
+</body>
+</html>

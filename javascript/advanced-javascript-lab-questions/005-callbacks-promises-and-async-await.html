@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Callback Promise Async Await</title>
+</head>
+<body>
+    <h2>Callback, Promise and Async/Await</h2>
+    <p id="output"></p>
+
+    <script>
+        function callbackExample(callback) {
+            callback("Callback executed");
+        }
+
+        function promiseExample() {
+            return new Promise(function(resolve) {
+                resolve("Promise resolved");
+            });
+        }
+
+        async function asyncExample() {
+            let result = await promiseExample();
+            document.getElementById("output").innerHTML =
+                result;
+        }
+
+        callbackExample(function(message) {
+            console.log(message);
+        });
+
+        asyncExample();
+    </script>
+</body>
+</html>

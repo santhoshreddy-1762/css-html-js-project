@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Second Largest</title>
+</head>
+<body>
+    <h2>Second Largest Element</h2>
+
+    <p>Array: 10, 20, 5, 40, 30</p>
+    <button onclick="findSecond()">Find</button>
+
+    <p id="output"></p>
+
+    <script>
+        function findSecond() {
+            let arr = [10, 20, 5, 40, 30];
+            let unique = [...new Set(arr)];
+            unique.sort((a, b) => b - a);
+
+            document.getElementById("output").innerHTML =
+                "Second Largest = " + unique[1];
+        }
+    </script>
+</body>
+</html>

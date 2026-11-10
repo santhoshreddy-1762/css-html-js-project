@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Duplicates</title>
+</head>
+<body>
+    <h2>Remove Duplicate Elements</h2>
+
+    <p>Array: 10, 20, 10, 30, 20, 40</p>
+    <button onclick="removeDuplicates()">Remove</button>
+
+    <p id="output"></p>
+
+    <script>
+        function removeDuplicates() {
+            let arr = [10, 20, 10, 30, 20, 40];
+            let result = [...new Set(arr)];
+
+            document.getElementById("output").innerHTML =
+                result.join(", ");
+        }
+    </script>
+</body>
+</html>

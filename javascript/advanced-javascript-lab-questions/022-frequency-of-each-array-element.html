@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Element Frequency</title>
+</head>
+<body>
+    <h2>Frequency of Elements</h2>
+
+    <button onclick="frequency()">Find Frequency</button>
+    <p id="output"></p>
+
+    <script>
+        function frequency() {
+            let arr = [1, 2, 2, 3, 3, 3, 4];
+            let count = {};
+
+            arr.forEach(function(item) {
+                count[item] = (count[item] || 0) + 1;
+            });
+
+            document.getElementById("output").innerHTML =
+                JSON.stringify(count);
+        }
+    </script>
+</body>
+</html>
