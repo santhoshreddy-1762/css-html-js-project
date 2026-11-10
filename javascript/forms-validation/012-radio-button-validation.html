@@ -1,0 +1,38 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Radio Button Validation</title>
+</head>
+<body>
+    <h2>Select Your Study Year</h2>
+
+    <form id="form">
+        <label><input type="radio" name="year" value="First Year"> First Year</label><br>
+        <label><input type="radio" name="year" value="Second Year"> Second Year</label><br>
+        <label><input type="radio" name="year" value="Third Year"> Third Year</label><br>
+        <label><input type="radio" name="year" value="Fourth Year"> Fourth Year</label><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const selected = document.querySelector('input[name="year"]:checked');
+            const result = document.getElementById("result");
+
+            if (selected) {
+                result.textContent = "Selected: " + selected.value;
+                result.style.color = "green";
+            } else {
+                result.textContent = "Please select one study year.";
+                result.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
+```

@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Age Validation</title>
+</head>
+<body>
+<h2>Age Validation</h2>
+<input type="number" id="age" placeholder="Enter age">
+<button onclick="validateAge()">Check Age</button>
+<p id="result"></p>
+
+<script>
+function validateAge() {
+    const value = document.getElementById("age").value;
+    const age = Number(value);
+    const result = document.getElementById("result");
+
+    if (value === "" || !Number.isInteger(age) || age < 1 || age > 120) {
+        result.textContent = "Enter a valid age between 1 and 120.";
+        result.style.color = "red";
+    } else {
+        result.textContent = "Valid age: " + age;
+        result.style.color = "green";
+    }
+}
+</script>
+</body>
+</html>

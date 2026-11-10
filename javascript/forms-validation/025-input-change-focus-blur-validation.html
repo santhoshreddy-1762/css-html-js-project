@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Events</title>
+</head>
+<body>
+    <h2>Form Events Demonstration</h2>
+
+    <input type="text" id="name" placeholder="Enter your name">
+    <br><br>
+
+    <select id="course">
+        <option value="">Select course</option>
+        <option value="B.Tech">B.Tech</option>
+        <option value="BCA">BCA</option>
+        <option value="B.Sc">B.Sc</option>
+    </select>
+
+    <p id="result">Interact with the fields.</p>
+
+    <script>
+        let nameField = document.getElementById("name");
+        let courseField = document.getElementById("course");
+        let result = document.getElementById("result");
+
+        nameField.addEventListener("input", function() {
+            result.textContent = "Input event: " + this.value;
+        });
+
+        nameField.addEventListener("focus", function() {
+            result.textContent = "Name field focused";
+        });
+
+        nameField.addEventListener("blur", function() {
+            result.textContent = "Name field lost focus";
+        });
+
+        courseField.addEventListener("change", function() {
+            result.textContent = "Selected course: " + this.value;
+        });
+    </script>
+</body>
+</html>

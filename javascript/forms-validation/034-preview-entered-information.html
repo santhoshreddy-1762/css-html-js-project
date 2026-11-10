@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Information Preview</title>
+</head>
+<body>
+    <h2>Information Preview Form</h2>
+
+    <form id="form">
+        <input id="name" placeholder="Name" required>
+        <br><br>
+        <input id="email" type="email" placeholder="Email" required>
+        <br><br>
+        <textarea id="about" placeholder="About you" required></textarea>
+        <br><br>
+        <button type="button" id="previewButton">Preview</button>
+        <button type="submit">Confirm</button>
+    </form>
+
+    <h3>Preview</h3>
+    <div id="preview"></div>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("previewButton").onclick = function() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let about = document.getElementById("about").value;
+            let preview = document.getElementById("preview");
+
+            preview.replaceChildren();
+
+            [
+                ["Name", name],
+                ["Email", email],
+                ["About", about]
+            ].forEach(function(item) {
+                let p = document.createElement("p");
+                p.textContent = item[0] + ": " + item[1];
+                preview.appendChild(p);
+            });
+        };
+
+        document.getElementById("form").onsubmit = function(e) {
+            e.preventDefault();
+            document.getElementById("result").textContent =
+                "Information confirmed (demo only).";
+        };
+    </script>
+</body>
+</html>

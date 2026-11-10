@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Form Fields</title>
+</head>
+<body>
+    <h2>Dynamic Contact Form</h2>
+
+    <label>Contact preference:</label>
+    <select id="method">
+        <option value="">Choose method</option>
+        <option value="email">Email</option>
+        <option value="phone">Phone</option>
+    </select>
+
+    <div id="extra"></div>
+    <br>
+    <button onclick="validateDetails()">Validate</button>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("method").addEventListener("change", function() {
+            let extra = document.getElementById("extra");
+            let result = document.getElementById("result");
+
+            extra.replaceChildren();
+            result.textContent = "";
+
+            if (this.value === "email") {
+                extra.innerHTML = '<br><input id="detail" placeholder="Enter email">';
+            } else if (this.value === "phone") {
+                extra.innerHTML = '<br><input id="detail" placeholder="10-digit Indian mobile">';
+            }
+        });
+
+        function validateDetails() {
+            let method = document.getElementById("method").value;
+            let detail = document.getElementById("detail");
+            let result = document.getElementById("result");
+
+            if (!method || !detail) {
+                result.textContent = "Choose a contact method first";
+                result.style.color = "red";
+                return;
+            }
+
+            let value = detail.value.trim();
+            let valid = method === "email"
+                ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+                : /^[6-9]\d{9}$/.test(value);
+
+            result.textContent = valid
+                ? "Valid " + method + " details"
+                : "Enter valid " + method + " details";
+
+            result.style.color = valid ? "green" : "red";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi-Step Registration</title>
+    <style>
+        .step {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h2>Multi-Step Registration</h2>
+
+    <form id="form">
+        <section class="step active" id="step1">
+            <h3>Step 1: Personal Details</h3>
+            <input id="name" placeholder="Full name">
+            <br><br>
+            <input id="email" placeholder="Email">
+            <br><br>
+            <button type="button" id="next">Next</button>
+        </section>
+
+        <section class="step" id="step2">
+            <h3>Step 2: Account Details</h3>
+            <input type="password" id="password" placeholder="Password (8+ characters)">
+            <br><br>
+            <input type="password" id="confirm" placeholder="Confirm password">
+            <br><br>
+            <button type="button" id="back">Back</button>
+            <button type="submit">Finish</button>
+        </section>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        let step1 = document.getElementById("step1");
+        let step2 = document.getElementById("step2");
+        let result = document.getElementById("result");
+
+        document.getElementById("next").onclick = function() {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+
+            if (!/^[A-Za-z ]{2,}$/.test(name) ||
+                !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                result.textContent = "Enter a valid name and email";
+                result.style.color = "red";
+            } else {
+                step1.classList.remove("active");
+                step2.classList.add("active");
+                result.textContent = "";
+            }
+        };
+
+        document.getElementById("back").onclick = function() {
+            step2.classList.remove("active");
+            step1.classList.add("active");
+            result.textContent = "";
+        };
+
+        document.getElementById("form").onsubmit = function(e) {
+            e.preventDefault();
+
+            let password = document.getElementById("password").value;
+            let confirm = document.getElementById("confirm").value;
+
+            if (password.length < 8 || password !== confirm) {
+                result.textContent = "Use an 8-character password and confirm it correctly";
+                result.style.color = "red";
+            } else {
+                result.textContent = "Registration validated successfully";
+                result.style.color = "green";
+            }
+        };
+    </script>
+</body>
+</html>

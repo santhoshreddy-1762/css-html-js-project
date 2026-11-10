@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dropdown Validation</title>
+</head>
+<body>
+    <h2>Select a Course</h2>
+
+    <form id="form">
+        <select id="course">
+            <option value="">-- Select Course --</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="BCA">BCA</option>
+            <option value="B.Sc">B.Sc</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const course = document.getElementById("course").value;
+            const result = document.getElementById("result");
+
+            if (course === "") {
+                result.textContent = "Please select a course.";
+                result.style.color = "red";
+            } else {
+                result.textContent = "Selected course: " + course;
+                result.style.color = "green";
+            }
+        });
+    </script>
+</body>
+</html>

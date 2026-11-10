@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-Time Validation</title>
+</head>
+<body>
+    <h2>Real-Time Email Validation</h2>
+
+    <input type="text" id="email" placeholder="Type your email">
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("email").addEventListener("input", function() {
+            let email = this.value.trim();
+            let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let result = document.getElementById("result");
+
+            if (email === "") {
+                result.textContent = "";
+            } else if (pattern.test(email)) {
+                result.textContent = "Email is valid";
+                result.style.color = "green";
+            } else {
+                result.textContent = "Enter a valid email";
+                result.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>

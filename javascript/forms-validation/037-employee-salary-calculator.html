@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Salary Calculator</title>
+</head>
+<body>
+    <h2>Employee Salary Calculator</h2>
+
+    <input type="number" id="basic" placeholder="Basic salary">
+    <br><br>
+    <input type="number" id="allowance" placeholder="Allowance">
+    <br><br>
+    <input type="number" id="deduction" placeholder="Deduction">
+    <br><br>
+    <button onclick="calculateSalary()">Calculate Salary</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateSalary() {
+            let basicField = document.getElementById("basic");
+            let allowanceField = document.getElementById("allowance");
+            let deductionField = document.getElementById("deduction");
+            let result = document.getElementById("result");
+
+            if (basicField.value === "" ||
+                allowanceField.value === "" ||
+                deductionField.value === "") {
+                result.textContent = "Enter all salary details";
+                return;
+            }
+
+            let basic = Number(basicField.value);
+            let allowance = Number(allowanceField.value);
+            let deduction = Number(deductionField.value);
+
+            if ([basic, allowance, deduction].some(value => value < 0)) {
+                result.textContent = "Amounts cannot be negative";
+                return;
+            }
+
+            let gross = basic + allowance;
+            let net = gross - deduction;
+
+            if (net < 0) {
+                result.textContent = "Deduction cannot exceed gross salary";
+                return;
+            }
+
+            result.textContent =
+                "Gross Salary: ₹" + gross.toFixed(2) +
+                " | Deduction: ₹" + deduction.toFixed(2) +
+                " | Net Salary: ₹" + net.toFixed(2);
+        }
+    </script>
+</body>
+</html>

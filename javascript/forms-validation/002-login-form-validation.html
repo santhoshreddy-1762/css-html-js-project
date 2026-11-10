@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Validation</title>
+    <style>
+        body { font-family: Arial; padding: 25px; background: #f2f5f9; }
+        form { max-width: 350px; margin: auto; background: white; padding: 20px; border-radius: 10px; }
+        input, button { width: 100%; padding: 10px; margin: 8px 0; box-sizing: border-box; }
+    </style>
+</head>
+<body>
+<form id="loginForm">
+    <h2>Login Form</h2>
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button type="submit">Login</button>
+    <p id="message" aria-live="polite"></p>
+</form>
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
+    const message = document.getElementById("message");
+
+    if (!/^[A-Za-z0-9_]{4,20}$/.test(username)) {
+        message.textContent = "Username must be 4–20 letters, numbers or underscores.";
+        message.style.color = "red";
+    } else if (password.length < 8) {
+        message.textContent = "Password must contain at least 8 characters.";
+        message.style.color = "red";
+    } else {
+        message.textContent = "Input validation successful. Demo only; no login occurred.";
+        message.style.color = "green";
+    }
+});
+</script>
+</body>
+</html>

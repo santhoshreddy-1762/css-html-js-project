@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Name Validation</title>
+</head>
+<body>
+<h2>Name Validation</h2>
+<input id="name" placeholder="Enter your name">
+<button onclick="validateName()">Validate</button>
+<p id="result"></p>
+
+<script>
+function validateName() {
+    const name = document.getElementById("name").value.trim();
+    const result = document.getElementById("result");
+
+    if (/^[A-Za-z]+$/.test(name)) {
+        result.textContent = "Valid name.";
+        result.style.color = "green";
+    } else {
+        result.textContent = "Use English letters only, without spaces or numbers.";
+        result.style.color = "red";
+    }
+}
+</script>
+</body>
+</html>

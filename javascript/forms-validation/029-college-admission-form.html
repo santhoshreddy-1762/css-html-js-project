@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Admission Form</title>
+</head>
+<body>
+    <h2>College Admission Form</h2>
+
+    <form id="form">
+        <input id="name" placeholder="Full name">
+        <br><br>
+        <input id="email" placeholder="Email">
+        <br><br>
+        <input id="phone" placeholder="10-digit Indian mobile">
+        <br><br>
+        <label>Date of Birth:</label>
+        <input type="date" id="dob">
+        <br><br>
+        <select id="course">
+            <option value="">Select course</option>
+            <option>B.Tech</option>
+            <option>BCA</option>
+            <option>B.Sc</option>
+        </select>
+        <br><br>
+        <button type="submit">Submit Admission</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let dob = document.getElementById("dob").value;
+            let course = document.getElementById("course").value;
+            let result = document.getElementById("result");
+
+            let validName = /^[A-Za-z ]{2,}$/.test(name);
+            let validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            let validPhone = /^[6-9]\d{9}$/.test(phone);
+            let validDob = dob !== "" && new Date(dob + "T00:00:00") <= new Date();
+            
+            if (validName && validEmail && validPhone && validDob && course) {
+                result.textContent = "Admission form validated successfully";
+                result.style.color = "green";
+            } else {
+                result.textContent = "Please complete all fields with valid information";
+                result.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Forms and Validation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #333;
+        }
+
+        header {
+            background: #0b3d91;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background: #082d68;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            color: #0b3d91;
+            margin-bottom: 20px;
+        }
+
+        .program {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 18px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px #00000012;
+        }
+
+        .number {
+            background: #0b3d91;
+            color: white;
+            min-width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        .program-text {
+            flex: 1;
+            font-size: 16px;
+        }
+
+        .program a {
+            background: #0b3d91;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        .program a:hover {
+            background: #1765c1;
+        }
+
+        footer {
+            background: #0b3d91;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .program {
+                flex-wrap: wrap;
+            }
+
+            .program-text {
+                min-width: 180px;
+            }
+
+            .program a {
+                margin-left: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Forms and Validation</h1>
+        <p>40 Practical Programs</p>
+    </header>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="#programs">Programs</a>
+    </nav>
+
+    <main class="container" id="programs">
+        <h2 class="section-title">Forms and Validation Programs</h2>
+
+        <div class="program">
+            <span class="number">1</span>
+            <div class="program-text">Student Registration Form Validation</div>
+            <a href="001-student-registration-form-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">2</span>
+            <div class="program-text">Login Form Validation</div>
+            <a href="002-login-form-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">3</span>
+            <div class="program-text">Name Accepts Only Alphabets</div>
+            <a href="003-name-accepts-only-alphabets.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">4</span>
+            <div class="program-text">Age Validation</div>
+            <a href="004-age-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">5</span>
+            <div class="program-text">Mobile Phone Validation</div>
+            <a href="005-mobile-phone-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">6</span>
+            <div class="program-text">Email Validation</div>
+            <a href="006-email-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">7</span>
+            <div class="program-text">Password Minimum Length</div>
+            <a href="007-password-minimum-length.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">8</span>
+            <div class="program-text">Strong Password Validator</div>
+            <a href="008-strong-password-validator.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">9</span>
+            <div class="program-text">Password Confirmation</div>
+            <a href="009-password-confirmation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">10</span>
+            <div class="program-text">Date of Birth Validation</div>
+            <a href="010-date-of-birth-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">11</span>
+            <div class="program-text">Gender Selection Validation</div>
+            <a href="011-gender-selection-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">12</span>
+            <div class="program-text">Radio Button Validation</div>
+            <a href="012-radio-button-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">13</span>
+            <div class="program-text">Checkbox Validation</div>
+            <a href="013-checkbox-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">14</span>
+            <div class="program-text">Dropdown Validation</div>
+            <a href="014-dropdown-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">15</span>
+            <div class="program-text">Textarea Validation</div>
+            <a href="015-textarea-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">16</span>
+            <div class="program-text">Required Field Validation</div>
+            <a href="016-required-field-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">17</span>
+            <div class="program-text">Dynamic Field Error Messages</div>
+            <a href="017-dynamic-field-error-messages.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">18</span>
+            <div class="program-text">Success Message After Submission</div>
+            <a href="018-success-message-after-submission.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">19</span>
+            <div class="program-text">Prevent Invalid Submission</div>
+            <a href="019-prevent-invalid-submission.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">20</span>
+            <div class="program-text">Regular Expression Form Validation</div>
+            <a href="020-regular-expression-form-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">21</span>
+            <div class="program-text">Email Regex Validation</div>
+            <a href="021-email-regex-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">22</span>
+            <div class="program-text">Phone Regex Validation</div>
+            <a href="022-phone-regex-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">23</span>
+            <div class="program-text">Password Regex Validation</div>
+            <a href="023-password-regex-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">24</span>
+            <div class="program-text">Real-Time Form Validation</div>
+            <a href="024-real-time-form-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">25</span>
+            <div class="program-text">Input, Change, Focus and Blur Validation</div>
+            <a href="025-input-change-focus-blur-validation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">26</span>
+            <div class="program-text">Password Strength Meter</div>
+            <a href="026-password-strength-meter.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">27</span>
+            <div class="program-text">Show and Hide Password</div>
+            <a href="027-show-hide-password.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">28</span>
+            <div class="program-text">Registration with Password Confirmation</div>
+            <a href="028-registration-with-password-confirmation.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">29</span>
+            <div class="program-text">College Admission Form</div>
+            <a href="029-college-admission-form.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">30</span>
+            <div class="program-text">Job Application Form</div>
+            <a href="030-job-application-form.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">31</span>
+            <div class="program-text">Feedback Form</div>
+            <a href="031-feedback-form.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">32</span>
+            <div class="program-text">Contact Form</div>
+            <a href="032-contact-form.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">33</span>
+            <div class="program-text">Multi-Step Registration Form</div>
+            <a href="033-multi-step-registration-form.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">34</span>
+            <div class="program-text">Preview Entered Information</div>
+            <a href="034-preview-entered-information.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">35</span>
+            <div class="program-text">Calculate Age from Date of Birth</div>
+            <a href="035-calculate-age-from-date-of-birth.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">36</span>
+            <div class="program-text">Marks Entry, Total, Average and Grade</div>
+            <a href="036-marks-entry-total-average-and-grade.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">37</span>
+            <div class="program-text">Employee Salary Calculator</div>
+            <a href="037-employee-salary-calculator.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">38</span>
+            <div class="program-text">Shopping Order Total</div>
+            <a href="038-shopping-order-total.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">39</span>
+            <div class="program-text">Dynamic Fields Based on Selection</div>
+            <a href="039-dynamic-fields-based-on-selection.html">Open Program</a>
+        </div>
+
+        <div class="program">
+            <span class="number">40</span>
+            <div class="program-text">Validate Without Page Reload</div>
+            <a href="040-validate-without-page-reload.html">Open Program</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>JavaScript Forms and Validation - 40 Programs</p>
+    </footer>
+
+</body>
+</html>

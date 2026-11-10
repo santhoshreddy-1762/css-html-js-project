@@ -1,0 +1,38 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkbox Validation</title>
+</head>
+<body>
+    <h2>Select Your Hobbies</h2>
+
+    <form id="form">
+        <label><input type="checkbox" name="hobby" value="Reading"> Reading</label><br>
+        <label><input type="checkbox" name="hobby" value="Music"> Music</label><br>
+        <label><input type="checkbox" name="hobby" value="Sports"> Sports</label><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const selected = document.querySelectorAll('input[name="hobby"]:checked');
+            const result = document.getElementById("result");
+
+            if (selected.length > 0) {
+                result.textContent = "Selected hobbies: " +
+                    Array.from(selected).map(item => item.value).join(", ");
+                result.style.color = "green";
+            } else {
+                result.textContent = "Select at least one hobby.";
+                result.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
+```

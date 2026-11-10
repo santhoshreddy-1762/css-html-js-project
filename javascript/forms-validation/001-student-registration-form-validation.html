@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <style>
+        body { font-family: Arial; background: #f2f5f9; padding: 25px; }
+        form { background: white; max-width: 400px; margin: auto; padding: 20px; border-radius: 10px; }
+        input, select, button { width: 100%; padding: 10px; margin: 8px 0; box-sizing: border-box; }
+        button { background: #0b3d91; color: white; border: 0; cursor: pointer; }
+        #message { font-weight: bold; }
+    </style>
+</head>
+<body>
+<form id="studentForm">
+    <h2>Student Registration</h2>
+    <input id="name" placeholder="Full Name">
+    <input id="email" type="text" placeholder="Email">
+    <input id="age" type="number" placeholder="Age">
+    <input id="phone" placeholder="Mobile Number">
+    <select id="course">
+        <option value="">Select Course</option>
+        <option>B.Tech</option>
+        <option>BCA</option>
+        <option>B.Sc</option>
+    </select>
+    <button type="submit">Register</button>
+    <p id="message" aria-live="polite"></p>
+</form>
+<script>
+document.getElementById("studentForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const age = Number(document.getElementById("age").value);
+    const phone = document.getElementById("phone").value.trim();
+    const course = document.getElementById("course").value;
+    const message = document.getElementById("message");
+
+    if (!/^[A-Za-z ]+$/.test(name)) {
+        message.textContent = "Enter a valid name using letters only.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        message.textContent = "Enter a valid email address.";
+    } else if (!Number.isInteger(age) || age < 16 || age > 100) {
+        message.textContent = "Age must be between 16 and 100.";
+    } else if (!/^[6-9]\d{9}$/.test(phone)) {
+        message.textContent = "Enter a valid 10-digit Indian mobile number.";
+    } else if (!course) {
+        message.textContent = "Please select a course.";
+    } else {
+        message.textContent = "Registration successful!";
+        message.style.color = "green";
+        return;
+    }
+
+    message.style.color = "red";
+});
+</script>
+</body>
+</html>

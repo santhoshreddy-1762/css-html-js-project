@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success Message</title>
+</head>
+<body>
+    <h2>Registration Form</h2>
+
+    <form id="form">
+        <input id="name" placeholder="Name" required>
+        <br><br>
+        <input id="email" type="email" placeholder="Email" required>
+        <br><br>
+        <button type="submit">Register</button>
+    </form>
+
+    <p id="result" aria-live="polite"></p>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const result = document.getElementById("result");
+            result.textContent = "Registration successful!";
+            result.style.color = "green";
+        });
+    </script>
+</body>
+</html>

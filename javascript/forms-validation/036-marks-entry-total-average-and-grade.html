@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marks Calculator</title>
+</head>
+<body>
+    <h2>Student Marks Calculator</h2>
+
+    <input type="number" id="m1" placeholder="Subject 1 marks">
+    <br><br>
+    <input type="number" id="m2" placeholder="Subject 2 marks">
+    <br><br>
+    <input type="number" id="m3" placeholder="Subject 3 marks">
+    <br><br>
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculate() {
+            let fields = [
+                document.getElementById("m1"),
+                document.getElementById("m2"),
+                document.getElementById("m3")
+            ];
+
+            let result = document.getElementById("result");
+
+            if (fields.some(field => field.value === "")) {
+                result.textContent = "Enter all subject marks";
+                return;
+            }
+
+            let marks = fields.map(field => Number(field.value));
+
+            if (marks.some(mark => mark < 0 || mark > 100)) {
+                result.textContent = "Marks must be between 0 and 100";
+                return;
+            }
+
+            let total = marks.reduce((sum, mark) => sum + mark, 0);
+            let average = total / marks.length;
+            let grade;
+
+            if (average >= 90) grade = "A";
+            else if (average >= 75) grade = "B";
+            else if (average >= 60) grade = "C";
+            else if (average >= 40) grade = "D";
+            else grade = "F";
+
+            result.textContent =
+                "Total: " + total +
+                " / 300 | Average: " + average.toFixed(2) +
+                " | Grade: " + grade;
+        }
+    </script>
+</body>
+</html>

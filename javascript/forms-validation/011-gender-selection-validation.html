@@ -1,0 +1,38 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gender Validation</title>
+</head>
+<body>
+    <h2>Gender Selection</h2>
+
+    <form id="form">
+        <label><input type="radio" name="gender" value="Male"> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+        <label><input type="radio" name="gender" value="Other"> Other</label>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const result = document.getElementById("result");
+
+            if (gender) {
+                result.textContent = "Selected gender: " + gender.value;
+                result.style.color = "green";
+            } else {
+                result.textContent = "Please select a gender.";
+                result.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
+```

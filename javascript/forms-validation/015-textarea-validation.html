@@ -1,0 +1,37 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Textarea Validation</title>
+</head>
+<body>
+    <h2>Message Validation</h2>
+
+    <form id="form">
+        <textarea id="message" rows="5" cols="30"
+            placeholder="Enter at least 10 characters"></textarea>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const message = document.getElementById("message").value.trim();
+            const result = document.getElementById("result");
+
+            if (message.length >= 10) {
+                result.textContent = "Message accepted successfully.";
+                result.style.color = "green";
+            } else {
+                result.textContent = "Enter at least 10 characters.";
+                result.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
+```

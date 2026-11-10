@@ -1,0 +1,41 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date of Birth Validation</title>
+</head>
+<body>
+<h2>Date of Birth Validation</h2>
+<label for="dob">Select date of birth:</label>
+<input type="date" id="dob">
+<button onclick="validateDOB()">Validate</button>
+<p id="result"></p>
+
+<script>
+function validateDOB() {
+    const value = document.getElementById("dob").value;
+    const result = document.getElementById("result");
+
+    if (!value) {
+        result.textContent = "Please select your date of birth.";
+        result.style.color = "red";
+        return;
+    }
+
+    const dob = new Date(value + "T00:00:00");
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    if (Number.isNaN(dob.getTime()) || dob > today) {
+        result.textContent = "Date of birth cannot be in the future.";
+        result.style.color = "red";
+    } else {
+        result.textContent = "Valid date of birth.";
+        result.style.color = "green";
+    }
+}
+</script>
+</body>
+</html>
+```

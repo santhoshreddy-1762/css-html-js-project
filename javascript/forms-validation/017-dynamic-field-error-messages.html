@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Individual Field Errors</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 13px;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Form Validation</h2>
+
+    <form id="form">
+        <label>Name:</label>
+        <input id="name">
+        <span id="nameError" class="error"></span>
+        <br><br>
+
+        <label>Email:</label>
+        <input id="email">
+        <span id="emailError" class="error"></span>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+
+            document.getElementById("nameError").textContent =
+                /^[A-Za-z ]{2,}$/.test(name) ? "" : "Enter a valid name.";
+
+            document.getElementById("emailError").textContent =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? "" : "Enter a valid email.";
+
+            const valid =
+                document.getElementById("nameError").textContent === "" &&
+                document.getElementById("emailError").textContent === "";
+
+            document.getElementById("result").textContent =
+                valid ? "All fields are valid." : "Correct the errors above.";
+
+            document.getElementById("result").style.color = valid ? "green" : "red";
+        });
+    </script>
+</body>
+</html>

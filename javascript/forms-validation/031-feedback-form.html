@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+</head>
+<body>
+    <h2>Feedback Form</h2>
+
+    <form id="form">
+        <input id="name" placeholder="Your name">
+        <br><br>
+        <select id="rating">
+            <option value="">Select rating</option>
+            <option value="1">1 - Poor</option>
+            <option value="2">2 - Fair</option>
+            <option value="3">3 - Good</option>
+            <option value="4">4 - Very good</option>
+            <option value="5">5 - Excellent</option>
+        </select>
+        <br><br>
+        <textarea id="feedback" placeholder="Enter feedback (10+ characters)"></textarea>
+        <br><br>
+        <button type="submit">Send Feedback</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let rating = document.getElementById("rating").value;
+            let feedback = document.getElementById("feedback").value.trim();
+            let result = document.getElementById("result");
+
+            let valid = name.length >= 2 && rating !== "" && feedback.length >= 10;
+
+            result.textContent = valid
+                ? "Thank you for your feedback!"
+                : "Enter your name, select a rating and write at least 10 characters";
+
+            result.style.color = valid ? "green" : "red";
+        });
+    </script>
+</body>
+</html>

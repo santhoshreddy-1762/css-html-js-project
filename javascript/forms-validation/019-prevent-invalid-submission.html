@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prevent Invalid Submission</title>
+</head>
+<body>
+    <h2>Validate Before Submission</h2>
+
+    <form id="form">
+        <input id="name" placeholder="Enter name">
+        <br><br>
+        <input id="age" type="number" placeholder="Enter age">
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const ageValue = document.getElementById("age").value;
+            const age = Number(ageValue);
+            const result = document.getElementById("result");
+
+            if (name === "" || ageValue === "" ||
+                !Number.isInteger(age) || age < 18 || age > 120) {
+                result.textContent = "Enter a name and a valid age from 18 to 120.";
+                result.style.color = "red";
+                return;
+            }
+
+            result.textContent = "Validation successful. Demo submission complete.";
+            result.style.color = "green";
+        });
+    </script>
+</body>
+</html>

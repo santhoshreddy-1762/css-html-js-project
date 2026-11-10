@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+</head>
+<body>
+    <h2>Contact Us</h2>
+
+    <form id="form">
+        <input id="name" placeholder="Your name">
+        <br><br>
+        <input id="email" placeholder="Your email">
+        <br><br>
+        <textarea id="message" placeholder="Your message (10+ characters)"></textarea>
+        <br><br>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let message = document.getElementById("message").value.trim();
+            let result = document.getElementById("result");
+
+            let valid = name.length >= 2 &&
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) &&
+                message.length >= 10;
+
+            result.textContent = valid
+                ? "Contact form validated. No message was sent to a server."
+                : "Please enter a valid name, email and message";
+
+            result.style.color = valid ? "green" : "red";
+        });
+    </script>
+</body>
+</html>

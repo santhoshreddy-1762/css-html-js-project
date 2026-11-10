@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regex Form Validation</title>
+</head>
+<body>
+    <h2>Regular Expression Validation</h2>
+
+    <form id="form">
+        <input id="name" placeholder="Name">
+        <br><br>
+        <input id="email" placeholder="Email">
+        <br><br>
+        <input id="phone" placeholder="10-digit Indian mobile">
+        <br><br>
+        <button type="submit">Validate</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+
+            const validName = /^[A-Za-z ]+$/.test(name);
+            const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            const validPhone = /^[6-9]\d{9}$/.test(phone);
+
+            const result = document.getElementById("result");
+
+            if (validName && validEmail && validPhone) {
+                result.textContent = "All fields are valid.";
+                result.style.color = "green";
+            } else {
+                result.textContent = "Check your name, email and phone number.";
+                result.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
