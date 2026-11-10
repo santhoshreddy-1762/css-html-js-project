@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouseover and Mouseout</title>
+</head>
+<body>
+    <h2>Mouse Events</h2>
+
+    <div onmouseover="mouseIn(this)"
+         onmouseout="mouseOut(this)"
+         style="padding:40px;background:lightblue;width:250px;text-align:center">
+        Move the mouse over this box
+    </div>
+
+    <script>
+        function mouseIn(element) {
+            element.style.background = "lightgreen";
+            element.textContent = "Mouse is over the box!";
+        }
+
+        function mouseOut(element) {
+            element.style.background = "lightblue";
+            element.textContent = "Move the mouse over this box";
+        }
+    </script>
+</body>
+</html>

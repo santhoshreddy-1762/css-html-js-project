@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard Events</title>
+</head>
+<body>
+    <h1>Keyboard Events Demonstration</h1>
+
+    <input type="text" id="input" placeholder="Type something here">
+    <h3 id="pressed">Key pressed: None</h3>
+    <h3 id="released">Key released: None</h3>
+    <p id="count">Total key presses: 0</p>
+
+    <script>
+        const input = document.getElementById("input");
+        let count = 0;
+
+        input.addEventListener("keydown", function(event) {
+            document.getElementById("pressed").textContent =
+                "Key pressed: " + event.key;
+
+            count++;
+            document.getElementById("count").textContent =
+                "Total key presses: " + count;
+        });
+
+        input.addEventListener("keyup", function(event) {
+            document.getElementById("released").textContent =
+                "Key released: " + event.key;
+        });
+    </script>
+</body>
+</html>

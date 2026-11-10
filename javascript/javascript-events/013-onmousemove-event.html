@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Move Event</title>
+</head>
+<body>
+    <h2>Mouse Move Event</h2>
+    <p id="result">Move your mouse inside the box.</p>
+
+    <div onmousemove="showCoordinates(event)"
+         style="height:300px;background:#e0f0ff;border:2px solid blue">
+    </div>
+
+    <script>
+        function showCoordinates(event) {
+            document.getElementById("result").textContent =
+                "X: " + event.offsetX + " | Y: " + event.offsetY;
+        }
+    </script>
+</body>
+</html>

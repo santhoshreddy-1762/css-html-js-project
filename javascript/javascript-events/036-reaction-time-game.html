@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reaction Time Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f4f7fb;
+            padding: 30px;
+        }
+
+        #target {
+            max-width: 550px;
+            height: 250px;
+            margin: 25px auto;
+            background: #cc3333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 24px;
+            user-select: none;
+        }
+
+        button {
+            padding: 12px 22px;
+            background: #174ea6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reaction-Time Game</h1>
+    <p>Click Start. Wait for green, then click the box.</p>
+
+    <button onclick="startGame()">Start Game</button>
+
+    <div id="target">Click Start Game</div>
+
+    <h2 id="result">Your reaction time will appear here.</h2>
+
+    <script>
+        const target = document.getElementById("target");
+        const result = document.getElementById("result");
+
+        let timeout;
+        let startTime = 0;
+        let state = "idle";
+
+        function startGame() {
+            clearTimeout(timeout);
+            state = "waiting";
+            target.style.background = "#cc3333";
+            target.textContent = "Wait for green...";
+            result.textContent = "";
+
+            const delay = Math.random() * 3000 + 2000;
+
+            timeout = setTimeout(function() {
+                state = "ready";
+                target.style.background = "green";
+                target.textContent = "CLICK NOW!";
+                startTime = performance.now();
+            }, delay);
+        }
+
+        target.addEventListener("click", function() {
+            if (state === "waiting") {
+                clearTimeout(timeout);
+                state = "early";
+                target.style.background = "#e69500";
+                target.textContent = "Too early!";
+                result.textContent = "Click Start Game to try again.";
+            } else if (state === "ready") {
+                const reaction = Math.round(performance.now() - startTime);
+                state = "finished";
+                target.style.background = "#174ea6";
+                target.textContent = "Well done!";
+                result.textContent = "Your reaction time: " + reaction + " ms";
+            }
+        });
+    </script>
+</body>
+</html>

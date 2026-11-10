@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Pressed Key</title>
+</head>
+<body>
+    <h2>Display Pressed Key</h2>
+    <p>Click the input box and press a key.</p>
+    <input type="text" id="input" placeholder="Press a key">
+    <h3 id="result">Your key will appear here.</h3>
+
+    <script>
+        document.getElementById("input").addEventListener("keydown", function(event) {
+            document.getElementById("result").textContent =
+                "Key: " + event.key + " | Code: " + event.code;
+        });
+    </script>
+</body>
+</html>

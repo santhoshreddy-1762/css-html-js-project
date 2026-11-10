@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Events</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 30px;
+        }
+
+        #box {
+            background: lightblue;
+            padding: 60px;
+            margin: 30px auto;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mouse Events Demonstration</h1>
+
+    <div id="box">Move, click, or press the mouse here.</div>
+    <p id="result">Mouse event will appear here.</p>
+
+    <script>
+        const box = document.getElementById("box");
+        const result = document.getElementById("result");
+
+        box.addEventListener("click", function() {
+            result.textContent = "Click event occurred.";
+        });
+
+        box.addEventListener("dblclick", function() {
+            result.textContent = "Double-click event occurred.";
+        });
+
+        box.addEventListener("mouseover", function() {
+            box.style.backgroundColor = "lightgreen";
+            result.textContent = "Mouse entered the box.";
+        });
+
+        box.addEventListener("mouseout", function() {
+            box.style.backgroundColor = "lightblue";
+            result.textContent = "Mouse left the box.";
+        });
+
+        box.addEventListener("mousedown", function() {
+            result.textContent = "Mouse button pressed.";
+        });
+
+        box.addEventListener("mouseup", function() {
+            result.textContent = "Mouse button released.";
+        });
+
+        box.addEventListener("mousemove", function(event) {
+            result.textContent =
+                "Mouse coordinates: X = " + event.offsetX +
+                ", Y = " + event.offsetY;
+        });
+    </script>
+</body>
+</html>

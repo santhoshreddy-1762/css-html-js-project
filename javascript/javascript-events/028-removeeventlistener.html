@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Event Listener</title>
+</head>
+<body>
+    <h2>Remove Event Listener</h2>
+
+    <button id="start">Enable Click</button>
+    <button id="stop">Remove Click Event</button>
+    <p id="result">Click event is enabled.</p>
+
+    <script>
+        const result = document.getElementById("result");
+        const startButton = document.getElementById("start");
+        const stopButton = document.getElementById("stop");
+
+        function handleClick() {
+            result.textContent = "Button clicked!";
+        }
+
+        startButton.addEventListener("click", function() {
+            startButton.addEventListener("click", handleClick);
+            result.textContent = "Click event enabled.";
+        });
+
+        stopButton.addEventListener("click", function() {
+            startButton.removeEventListener("click", handleClick);
+            result.textContent = "Click event removed.";
+        });
+
+        startButton.addEventListener("click", handleClick);
+    </script>
+</body>
+</html>

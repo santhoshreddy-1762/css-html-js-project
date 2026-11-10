@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bubbling and Capturing</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .box {
+            padding: 30px;
+            margin: 10px;
+            border: 2px solid black;
+        }
+
+        #outer { background: lightblue; }
+        #middle { background: lightgreen; }
+        #inner { background: orange; }
+    </style>
+</head>
+<body>
+    <h1>Event Bubbling and Capturing</h1>
+
+    <button onclick="setMode('bubble')">Bubbling</button>
+    <button onclick="setMode('capture')">Capturing</button>
+
+    <div id="outer" class="box">
+        Outer
+        <div id="middle" class="box">
+            Middle
+            <div id="inner" class="box">Inner - Click Here</div>
+        </div>
+    </div>
+
+    <p id="result">Choose a mode and click the inner box.</p>
+
+    <script>
+        let mode = "bubble";
+        const result = document.getElementById("result");
+        const elements = ["outer", "middle", "inner"];
+
+        function handler(event) {
+            result.textContent += " " + event.currentTarget.id;
+        }
+
+        elements.forEach(function(id) {
+            document.getElementById(id).addEventListener("click", handler);
+            document.getElementById(id).addEventListener("click", handler, true);
+        });
+
+        function setMode(selectedMode) {
+            mode = selectedMode;
+            result.textContent =
+                "Mode selected: " + mode + ". Click the inner box.";
+        }
+
+        elements.forEach(function(id) {
+            const element = document.getElementById(id);
+
+            element.addEventListener("click", function(event) {
+                if (mode === "bubble" && !event.eventPhase) return;
+            });
+        });
+
+        // Replace the demonstration handlers with mode-specific handlers.
+        elements.forEach(function(id) {
+            const element = document.getElementById(id);
+            element.replaceWith(element.cloneNode(true));
+        });
+
+        elements.forEach(function(id) {
+            document.getElementById(id).addEventListener("click", function(event) {
+                if (mode === "bubble" && event.eventPhase === Event.BUBBLING_PHASE) {
+                    result.textContent += " " + id;
+                } else if (mode === "capture" &&
+                           event.eventPhase === Event.CAPTURING_PHASE) {
+                    result.textContent += " " + id;
+                }
+            }, true);
+
+            document.getElementById(id).addEventListener("click", function(event) {
+                if (mode === "bubble" && event.eventPhase === Event.BUBBLING_PHASE) {
+                    result.textContent += " " + id;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

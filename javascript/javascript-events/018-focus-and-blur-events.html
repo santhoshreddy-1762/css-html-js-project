@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Focus and Blur Events</title>
+</head>
+<body>
+    <h2>Focus and Blur Events</h2>
+    <input type="text" id="name" placeholder="Click here">
+    <p id="result">Click the input field.</p>
+
+    <script>
+        const input = document.getElementById("name");
+
+        input.addEventListener("focus", function() {
+            input.style.background = "lightyellow";
+            document.getElementById("result").textContent =
+                "Input field is focused.";
+        });
+
+        input.addEventListener("blur", function() {
+            input.style.background = "";
+            document.getElementById("result").textContent =
+                "Input field lost focus.";
+        });
+    </script>
+</body>
+</html>

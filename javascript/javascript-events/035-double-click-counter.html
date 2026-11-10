@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Double Click Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+
+        #target {
+            background: #00a6a6;
+            color: white;
+            padding: 60px 20px;
+            margin: 30px auto;
+            max-width: 500px;
+            border-radius: 12px;
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Double-Click Counter</h1>
+    <p>Double-click the box below.</p>
+
+    <h2>Double Clicks: <span id="count">0</span></h2>
+
+    <div id="target">
+        <h2>Double-Click Me!</h2>
+    </div>
+
+    <button onclick="resetCount()">Reset Counter</button>
+
+    <script>
+        let count = 0;
+
+        document.getElementById("target").addEventListener("dblclick", function() {
+            count++;
+            document.getElementById("count").textContent = count;
+        });
+
+        function resetCount() {
+            count = 0;
+            document.getElementById("count").textContent = count;
+        }
+    </script>
+</body>
+</html>

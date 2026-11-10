@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Font Size</title>
+</head>
+<body>
+    <h2>Dynamic Font Size</h2>
+
+    <p id="text">JavaScript can change the font size dynamically.</p>
+
+    <button onclick="changeSize(16)">Small</button>
+    <button onclick="changeSize(24)">Medium</button>
+    <button onclick="changeSize(32)">Large</button>
+
+    <script>
+        function changeSize(size) {
+            document.getElementById("text").style.fontSize = size + "px";
+        }
+    </script>
+</body>
+</html>

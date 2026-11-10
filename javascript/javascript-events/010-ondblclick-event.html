@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Double Click Event</title>
+</head>
+<body>
+    <h2>Double-Click Event</h2>
+    <p ondblclick="changeText(this)">Double-click this text.</p>
+
+    <script>
+        function changeText(element) {
+            element.textContent = "You double-clicked the text!";
+        }
+    </script>
+</body>
+</html>

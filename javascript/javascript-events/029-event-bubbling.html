@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Bubbling</title>
+    <style>
+        #outer {
+            background: lightblue;
+            padding: 40px;
+        }
+
+        #middle {
+            background: lightgreen;
+            padding: 30px;
+        }
+
+        #inner {
+            background: orange;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Event Bubbling</h2>
+
+    <div id="outer">
+        Outer
+        <div id="middle">
+            Middle
+            <div id="inner">Inner - Click Here</div>
+        </div>
+    </div>
+
+    <p id="result"></p>
+
+    <script>
+        ["outer", "middle", "inner"].forEach(function(id) {
+            document.getElementById(id).addEventListener("click", function() {
+                document.getElementById("result").textContent +=
+                    id + " clicked. ";
+            });
+        });
+    </script>
+</body>
+</html>

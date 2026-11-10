@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Application</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #174ea6;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .box {
+            width: 280px;
+            min-height: 300px;
+            padding: 15px;
+            background: white;
+            border: 2px dashed #174ea6;
+            border-radius: 12px;
+        }
+
+        .item {
+            background: #174ea6;
+            color: white;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 8px;
+            cursor: grab;
+        }
+
+        .item:active {
+            cursor: grabbing;
+        }
+
+        .dragging {
+            opacity: 0.4;
+        }
+
+        .box.over {
+            background: #dbeafe;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #174ea6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        #message {
+            font-weight: bold;
+            color: #174ea6;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Drag and Drop Application</h1>
+    <p>Drag the items from the first box into the second box.</p>
+
+    <div class="container">
+        <div class="box" id="source">
+            <h2>Available Items</h2>
+
+            <div class="item" draggable="true">HTML</div>
+            <div class="item" draggable="true">CSS</div>
+            <div class="item" draggable="true">JavaScript</div>
+            <div class="item" draggable="true">Python</div>
+        </div>
+
+        <div class="box" id="target">
+            <h2>Dropped Items</h2>
+            <p id="empty">Drop items here</p>
+        </div>
+    </div>
+
+    <p id="message">Drag an item to get started.</p>
+    <button onclick="resetItems()">Reset</button>
+
+    <script>
+        const source = document.getElementById("source");
+        const target = document.getElementById("target");
+        const message = document.getElementById("message");
+
+        let draggedItem = null;
+
+        document.querySelectorAll(".item").forEach(function(item) {
+            item.addEventListener("dragstart", function(event) {
+                draggedItem = item;
+                item.classList.add("dragging");
+
+                event.dataTransfer.setData("text/plain", item.textContent);
+                event.dataTransfer.effectAllowed = "move";
+            });
+
+            item.addEventListener("dragend", function() {
+                item.classList.remove("dragging");
+                draggedItem = null;
+            });
+        });
+
+        [source, target].forEach(function(box) {
+            box.addEventListener("dragover", function(event) {
+                event.preventDefault();
+                box.classList.add("over");
+                event.dataTransfer.dropEffect = "move";
+            });
+
+            box.addEventListener("dragleave", function(event) {
+                if (!box.contains(event.relatedTarget)) {
+                    box.classList.remove("over");
+                }
+            });
+
+            box.addEventListener("drop", function(event) {
+                event.preventDefault();
+                box.classList.remove("over");
+
+                if (draggedItem && box !== draggedItem.parentElement) {
+                    box.appendChild(draggedItem);
+                    message.textContent =
+                        draggedItem.textContent + " moved successfully!";
+                    updateEmptyMessage();
+                }
+            });
+        });
+
+        function updateEmptyMessage() {
+            const empty = document.getElementById("empty");
+            empty.style.display =
+                target.querySelector(".item") ? "none" : "block";
+        }
+
+        function resetItems() {
+            const items = source.querySelectorAll(".item");
+            items.forEach(function(item) {
+                source.appendChild(item);
+            });
+
+            message.textContent = "All items have been reset.";
+            updateEmptyMessage();
+        }
+    </script>
+</body>
+</html>

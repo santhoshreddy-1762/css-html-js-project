@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard Controlled Object</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #area {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            height: 350px;
+            margin: 20px auto;
+            background: #eeeeee;
+            border: 2px solid #333;
+            overflow: hidden;
+        }
+
+        #box {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: #007bff;
+            left: 0;
+            top: 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Keyboard-Controlled Object</h1>
+    <p>Use the arrow keys to move the square.</p>
+
+    <div id="area">
+        <div id="box"></div>
+    </div>
+
+    <script>
+        const area = document.getElementById("area");
+        const box = document.getElementById("box");
+
+        let x = 0;
+        let y = 0;
+        const step = 10;
+
+        document.addEventListener("keydown", function(event) {
+            const maxX = area.clientWidth - box.offsetWidth;
+            const maxY = area.clientHeight - box.offsetHeight;
+
+            if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) {
+                event.preventDefault();
+            }
+
+            if (event.key === "ArrowUp") y -= step;
+            if (event.key === "ArrowDown") y += step;
+            if (event.key === "ArrowLeft") x -= step;
+            if (event.key === "ArrowRight") x += step;
+
+            x = Math.max(0, Math.min(x, maxX));
+            y = Math.max(0, Math.min(y, maxY));
+
+            box.style.left = x + "px";
+            box.style.top = y + "px";
+        });
+    </script>
+</body>
+</html>

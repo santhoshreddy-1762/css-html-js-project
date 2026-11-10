@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Down and Up</title>
+</head>
+<body>
+    <h2>Mouse Down and Up Events</h2>
+
+    <button onmousedown="press(this)" onmouseup="release(this)">
+        Press and Release
+    </button>
+
+    <p id="result">Press the button.</p>
+
+    <script>
+        function press(element) {
+            element.style.background = "orange";
+            document.getElementById("result").textContent =
+                "Mouse button is pressed.";
+        }
+
+        function release(element) {
+            element.style.background = "";
+            document.getElementById("result").textContent =
+                "Mouse button is released.";
+        }
+    </script>
+</body>
+</html>

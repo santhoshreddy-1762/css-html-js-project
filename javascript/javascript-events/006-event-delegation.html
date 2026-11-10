@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Delegation</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 30px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 8px;
+            cursor: pointer;
+            background: #174ea6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Delegation</h1>
+    <p>Click any button below.</p>
+
+    <div id="container">
+        <button data-course="HTML">HTML</button>
+        <button data-course="CSS">CSS</button>
+        <button data-course="JavaScript">JavaScript</button>
+        <button data-course="Python">Python</button>
+    </div>
+
+    <h3 id="result"></h3>
+
+    <script>
+        document.getElementById("container").addEventListener("click", function(event) {
+            if (event.target.matches("button[data-course]")) {
+                document.getElementById("result").textContent =
+                    "You selected: " + event.target.dataset.course;
+            }
+        });
+    </script>
+</body>
+</html>

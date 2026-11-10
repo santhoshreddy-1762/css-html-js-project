@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Color Change</title>
+</head>
+<body>
+    <h2>Change Background Color</h2>
+    <button id="changeButton">Change Color</button>
+
+    <script>
+        const colors = ["lightblue", "lightgreen", "lightpink", "lightyellow"];
+        let index = 0;
+
+        document.getElementById("changeButton").addEventListener("click", function() {
+            document.body.style.backgroundColor = colors[index];
+            index = (index + 1) % colors.length;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Event Listeners</title>
+</head>
+<body>
+    <h2>Multiple Event Listeners</h2>
+    <button id="btn">Click Me</button>
+    <p id="result"></p>
+
+    <script>
+        const button = document.getElementById("btn");
+        const result = document.getElementById("result");
+
+        button.addEventListener("click", function() {
+            result.textContent = "First event listener executed.";
+        });
+
+        button.addEventListener("click", function() {
+            result.textContent += " Second event listener executed.";
+        });
+
+        button.addEventListener("mouseover", function() {
+            button.style.backgroundColor = "lightgreen";
+        });
+
+        button.addEventListener("mouseout", function() {
+            button.style.backgroundColor = "";
+        });
+    </script>
+</body>
+</html>

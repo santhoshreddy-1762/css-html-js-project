@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyboard Press Counter</title>
+</head>
+<body>
+    <h2>Keyboard Press Counter</h2>
+    <input type="text" id="input" placeholder="Press keys here">
+    <h3>Key presses: <span id="count">0</span></h3>
+    <button onclick="resetCount()">Reset</button>
+
+    <script>
+        let count = 0;
+
+        document.getElementById("input").addEventListener("keydown", function() {
+            count++;
+            document.getElementById("count").textContent = count;
+        });
+
+        function resetCount() {
+            count = 0;
+            document.getElementById("count").textContent = count;
+        }
+    </script>
+</body>
+</html>

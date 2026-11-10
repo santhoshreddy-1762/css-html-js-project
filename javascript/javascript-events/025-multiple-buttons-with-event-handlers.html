@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Event Handlers</title>
+</head>
+<body>
+    <h2>Multiple Event Handlers</h2>
+
+    <button onclick="showMessage()">Click</button>
+    <button ondblclick="doubleMessage()">Double Click</button>
+    <button onmouseover="hoverMessage()">Move Mouse Over</button>
+
+    <p id="result">Perform an action using the buttons.</p>
+
+    <script>
+        function showMessage() {
+            document.getElementById("result").textContent =
+                "Click event triggered!";
+        }
+
+        function doubleMessage() {
+            document.getElementById("result").textContent =
+                "Double-click event triggered!";
+        }
+
+        function hoverMessage() {
+            document.getElementById("result").textContent =
+                "Mouseover event triggered!";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard Typing Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 650px;
+            background: white;
+            margin: auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px #00000015;
+        }
+
+        #sentence {
+            background: #eaf2ff;
+            padding: 18px;
+            border-radius: 8px;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 12px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin: 12px 5px;
+            padding: 11px 20px;
+            border: none;
+            border-radius: 6px;
+            background: #174ea6;
+            color: white;
+            cursor: pointer;
+        }
+
+        #result {
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Keyboard Typing Test</h1>
+        <p>Type the sentence below as quickly and accurately as possible.</p>
+
+        <p id="sentence">
+            JavaScript makes websites interactive and dynamic.
+        </p>
+
+        <textarea id="typing" placeholder="Start typing here..." disabled></textarea>
+
+        <p id="timer">Time: 30 seconds</p>
+        <p id="result"></p>
+
+        <button onclick="startTest()">Start Test</button>
+        <button onclick="resetTest()">Reset</button>
+    </div>
+
+    <script>
+        const sentence = "JavaScript makes websites interactive and dynamic.";
+        const typing = document.getElementById("typing");
+        const timerDisplay = document.getElementById("timer");
+        const result = document.getElementById("result");
+
+        let timeLeft = 30;
+        let timer = null;
+        let running = false;
+
+        function startTest() {
+            clearInterval(timer);
+
+            timeLeft = 30;
+            running = true;
+            typing.disabled = false;
+            typing.value = "";
+            typing.focus();
+            result.textContent = "";
+            timerDisplay.textContent = "Time: " + timeLeft + " seconds";
+
+            timer = setInterval(function() {
+                timeLeft--;
+                timerDisplay.textContent = "Time: " + timeLeft + " seconds";
+
+                if (timeLeft <= 0) {
+                    finishTest();
+                }
+            }, 1000);
+        }
+
+        function finishTest() {
+            clearInterval(timer);
+            running = false;
+            typing.disabled = true;
+
+            const typedText = typing.value.trim();
+            const words = typedText ? typedText.split(/\s+/).length : 0;
+            const wpm = Math.round(words / ((30 - timeLeft || 1) / 60));
+
+            let correct = 0;
+
+            for (let i = 0; i < Math.min(typing.value.length, sentence.length); i++) {
+                if (typing.value[i] === sentence[i]) {
+                    correct++;
+                }
+            }
+
+            const accuracy = typing.value.length === 0 ? 0 :
+                Math.round((correct / typing.value.length) * 100);
+
+            result.innerHTML =
+                "Words typed: " + words + "<br>" +
+                "Typing speed: " + wpm + " WPM<br>" +
+                "Character accuracy: " + accuracy + "%";
+        }
+
+        function resetTest() {
+            clearInterval(timer);
+            running = false;
+            timeLeft = 30;
+            typing.value = "";
+            typing.disabled = true;
+            timerDisplay.textContent = "Time: 30 seconds";
+            result.textContent = "";
+        }
+
+        typing.addEventListener("input", function() {
+            if (running && typing.value === sentence) {
+                finishTest();
+            }
+        });
+    </script>
+</body>
+</html>

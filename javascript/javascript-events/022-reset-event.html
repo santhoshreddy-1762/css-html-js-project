@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reset Event</title>
+</head>
+<body>
+    <h2>Reset Event</h2>
+
+    <form id="myForm">
+        <input type="text" placeholder="Enter your name">
+        <input type="email" placeholder="Enter your email">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset Form</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("myForm").addEventListener("reset", function() {
+            document.getElementById("result").textContent =
+                "Form fields have been reset.";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,477 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events | Practical Programs</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #0b3d91;
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 15px;
+        }
+
+        nav {
+            background: #062b68;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .intro h1 {
+            color: #0b3d91;
+            margin-bottom: 10px;
+        }
+
+        .program-count {
+            display: inline-block;
+            background: #e3ecff;
+            color: #0b3d91;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .program {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e0e5ed;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .program:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.13);
+        }
+
+        .number {
+            color: #0b3d91;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .program h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .program p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .program a {
+            display: inline-block;
+            background: #0b3d91;
+            color: white;
+            text-decoration: none;
+            padding: 9px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .program a:hover {
+            background: #062b68;
+        }
+
+        .program:hover {
+            background-color: #ffffff;
+        }
+
+        footer {
+            background: #0b3d91;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 35px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 20px 10px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">JavaScript Events</div>
+        <p>Web Technology Practical Programs</p>
+    </header>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="#programs">Event Programs</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <main class="container">
+
+        <section class="intro">
+            <h1>JavaScript Event Handling</h1>
+            <p>
+                Explore practical examples of mouse events, keyboard events,
+                form events, event listeners and interactive applications.
+            </p>
+            <div class="program-count">
+                37 Practical Programs
+            </div>
+        </section>
+
+        <section class="program-grid" id="programs">
+
+            <article class="program">
+                <div class="number">PROGRAM 001</div>
+                <h3>Mouse Events</h3>
+                <p>Demonstrates mouse click, movement and other mouse interactions.</p>
+                <a href="001-mouse-events.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 002</div>
+                <h3>Keyboard Events</h3>
+                <p>Demonstrates keyboard input and key events.</p>
+                <a href="002-keyboard-events.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 003</div>
+                <h3>Form Events</h3>
+                <p>Demonstrates submit, change, focus and blur events.</p>
+                <a href="003-form-events-submit-change-focus-and-blur.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 004</div>
+                <h3>Double-Click Event</h3>
+                <p>Responds when a user double-clicks an element.</p>
+                <a href="004-double-click-events.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 005</div>
+                <h3>Event Bubbling and Capturing</h3>
+                <p>Shows how events travel through nested elements.</p>
+                <a href="005-event-bubbling-and-capturing.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 006</div>
+                <h3>Event Delegation</h3>
+                <p>Handles events from multiple child elements using a parent.</p>
+                <a href="006-event-delegation.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 007</div>
+                <h3>Keyboard-Controlled Game</h3>
+                <p>Controls a webpage object using keyboard keys.</p>
+                <a href="007-keyboard-controlled-webpage-game.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 008</div>
+                <h3>Drag and Drop</h3>
+                <p>Demonstrates dragging and dropping elements.</p>
+                <a href="008-drag-and-drop-application.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 009</div>
+                <h3>Onclick Event</h3>
+                <p>Executes a function when an element is clicked.</p>
+                <a href="009-onclick-event.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 010</div>
+                <h3>Ondblclick Event</h3>
+                <p>Executes an action when an element is double-clicked.</p>
+                <a href="010-ondblclick-event.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 011</div>
+                <h3>Mouse Over and Mouse Out</h3>
+                <p>Responds when the mouse enters or leaves an element.</p>
+                <a href="011-onmouseover-and-onmouseout.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 012</div>
+                <h3>Mouse Down and Mouse Up</h3>
+                <p>Demonstrates pressing and releasing a mouse button.</p>
+                <a href="012-onmousedown-and-onmouseup.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 013</div>
+                <h3>Mouse Move Event</h3>
+                <p>Detects mouse movement over a webpage.</p>
+                <a href="013-onmousemove-event.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 014</div>
+                <h3>Keydown Event</h3>
+                <p>Detects when a keyboard key is pressed down.</p>
+                <a href="014-keydown-event.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 015</div>
+                <h3>Keyup Event</h3>
+                <p>Detects when a keyboard key is released.</p>
+                <a href="015-keyup-event.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 016</div>
+                <h3>Display Pressed Key</h3>
+                <p>Displays the key pressed by the user.</p>
+                <a href="016-display-the-key-pressed.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 017</div>
+                <h3>Count Keyboard Presses</h3>
+                <p>Counts the number of keyboard key presses.</p>
+                <a href="017-count-keyboard-key-presses.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 018</div>
+                <h3>Focus and Blur Events</h3>
+                <p>Responds when an input receives or loses focus.</p>
+                <a href="018-focus-and-blur-events.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 019</div>
+                <h3>Change Event</h3>
+                <p>Detects changes to a form control.</p>
+                <a href="019-change-event.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 020</div>
+                <h3>Input Event</h3>
+                <p>Responds as the user types in an input field.</p>
+                <a href="020-input-event.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 021</div>
+                <h3>Submit Event</h3>
+                <p>Handles form submission using JavaScript.</p>
+                <a href="021-submit-event.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 022</div>
+                <h3>Reset Event</h3>
+                <p>Demonstrates resetting a form to its initial values.</p>
+                <a href="022-reset-event.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 023</div>
+                <h3>Background Color Button</h3>
+                <p>Changes the background color using a button.</p>
+                <a href="023-background-color-button.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 024</div>
+                <h3>Dynamic Font Size</h3>
+                <p>Changes text size when a button is clicked.</p>
+                <a href="024-dynamic-font-size-button.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 025</div>
+                <h3>Multiple Buttons</h3>
+                <p>Uses separate event handlers for multiple buttons.</p>
+                <a href="025-multiple-buttons-with-event-handlers.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 026</div>
+                <h3>addEventListener()</h3>
+                <p>Registers an event handler with JavaScript.</p>
+                <a href="026-addeventlistener.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 027</div>
+                <h3>Multiple Event Listeners</h3>
+                <p>Attaches multiple listeners to an element.</p>
+                <a href="027-multiple-event-listeners.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 028</div>
+                <h3>removeEventListener()</h3>
+                <p>Removes a previously registered event listener.</p>
+                <a href="028-removeeventlistener.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 029</div>
+                <h3>Event Bubbling</h3>
+                <p>Demonstrates event propagation from child to parent.</p>
+                <a href="029-event-bubbling.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 030</div>
+                <h3>Event Capturing</h3>
+                <p>Demonstrates event propagation from parent to child.</p>
+                <a href="030-event-capturing.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 031</div>
+                <h3>Event Delegation</h3>
+                <p>Uses a parent listener to handle child events.</p>
+                <a href="031-event-delegation.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 032</div>
+                <h3>Mouse Coordinate Tracker</h3>
+                <p>Displays the mouse pointer's coordinates.</p>
+                <a href="032-mouse-coordinate-tracker.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 033</div>
+                <h3>Keyboard-Controlled Object</h3>
+                <p>Moves an object using keyboard arrow keys.</p>
+                <a href="033-keyboard-controlled-moving-object.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 034</div>
+                <h3>Click Counter</h3>
+                <p>Counts button clicks and displays the total.</p>
+                <a href="034-click-counter.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 035</div>
+                <h3>Double-Click Counter</h3>
+                <p>Counts double-click interactions.</p>
+                <a href="035-double-click-counter.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 036</div>
+                <h3>Reaction Time Game</h3>
+                <p>Tests how quickly the user responds to a signal.</p>
+                <a href="036-reaction-time-game.html">Open Program</a>
+            </article>
+
+            <article class="program">
+                <div class="number">PROGRAM 037</div>
+                <h3>Keyboard Typing Test</h3>
+                <p>Practises typing and measures typing performance.</p>
+                <a href="037-keyboard-typing-test.html">Open Program</a>
+            </article>
+
+        </section>
+
+        <section id="about" style="text-align: center; margin-top: 35px;">
+            <h2>About This Project</h2>
+            <p>
+                This collection demonstrates JavaScript events and interactive
+                web development for Web Technology practical learning.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>JavaScript Events | Web Technology Practical Programs</p>
+        <p>Designed by m.santhosh</p>
+    </footer>
+
+</body>
+</html>
+```

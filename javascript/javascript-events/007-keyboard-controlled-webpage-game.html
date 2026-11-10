@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Controlled Game</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f0f4f8;
+            padding: 20px;
+        }
+
+        #game {
+            width: 320px;
+            height: 320px;
+            max-width: 90vw;
+            max-height: 90vw;
+            position: relative;
+            margin: 20px auto;
+            background: white;
+            border: 3px solid #174ea6;
+            box-sizing: border-box;
+        }
+
+        #player, #target {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            border-radius: 8px;
+        }
+
+        #player {
+            background: #174ea6;
+            left: 0;
+            top: 0;
+        }
+
+        #target {
+            background: green;
+            right: 0;
+            bottom: 0;
+        }
+
+        #result {
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Keyboard-Controlled Game</h1>
+    <p>Use the arrow keys to move the blue player to the green target.</p>
+
+    <div id="game">
+        <div id="player"></div>
+        <div id="target"></div>
+    </div>
+
+    <h3 id="result">Game started! Reach the target.</h3>
+    <button onclick="resetGame()">Restart Game</button>
+
+    <script>
+        const game = document.getElementById("game");
+        const player = document.getElementById("player");
+        const result = document.getElementById("result");
+
+        const step = 20;
+        let x = 0;
+        let y = 0;
+        let won = false;
+
+        document.addEventListener("keydown", function(event) {
+            if (won) return;
+
+            if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) {
+                event.preventDefault();
+            } else {
+                return;
+            }
+
+            const maxX = game.clientWidth - player.offsetWidth;
+            const maxY = game.clientHeight - player.offsetHeight;
+
+            if (event.key === "ArrowUp") y -= step;
+            if (event.key === "ArrowDown") y += step;
+            if (event.key === "ArrowLeft") x -= step;
+            if (event.key === "ArrowRight") x += step;
+
+            x = Math.max(0, Math.min(x, maxX));
+            y = Math.max(0, Math.min(y, maxY));
+
+            player.style.left = x + "px";
+            player.style.top = y + "px";
+
+            checkWin();
+        });
+
+        function checkWin() {
+            const playerRect = player.getBoundingClientRect();
+            const targetRect = document.getElementById("target").getBoundingClientRect();
+
+            const touching =
+                playerRect.left < targetRect.right &&
+                playerRect.right > targetRect.left &&
+                playerRect.top < targetRect.bottom &&
+                playerRect.bottom > targetRect.top;
+
+            if (touching) {
+                won = true;
+                result.textContent = "Congratulations! You reached the target!";
+            }
+        }
+
+        function resetGame() {
+            x = 0;
+            y = 0;
+            won = false;
+
+            player.style.left = "0px";
+            player.style.top = "0px";
+            result.textContent = "Game restarted! Reach the target.";
+        }
+    </script>
+</body>
+</html>
