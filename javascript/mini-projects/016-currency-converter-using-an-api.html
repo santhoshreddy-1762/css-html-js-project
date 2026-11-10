@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin: 50px auto; max-width: 500px; }
+        input, select, button { padding: 10px; margin: 6px; }
+    </style>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+
+    <input type="number" id="amount" min="0" step="any" value="1">
+    <br>
+
+    <select id="from">
+        <option value="USD">USD - US Dollar</option>
+        <option value="INR">INR - Indian Rupee</option>
+        <option value="EUR">EUR - Euro</option>
+        <option value="GBP">GBP - British Pound</option>
+        <option value="JPY">JPY - Japanese Yen</option>
+    </select>
+
+    <p>Convert to</p>
+
+    <select id="to">
+        <option value="INR">INR - Indian Rupee</option>
+        <option value="USD">USD - US Dollar</option>
+        <option value="EUR">EUR - Euro</option>
+        <option value="GBP">GBP - British Pound</option>
+        <option value="JPY">JPY - Japanese Yen</option>
+    </select>
+    <br>
+
+    <button onclick="convertCurrency()">Convert</button>
+    <h2 id="result"></h2>
+    <p id="status"></p>
+
+    <script>
+        async function convertCurrency() {
+            const amount = Number(document.getElementById("amount").value);
+            const from = document.getElementById("from").value;
+            const to = document.getElementById("to").value;
+            const result = document.getElementById("result");
+            const status = document.getElementById("status");
+
+            if (!Number.isFinite(amount) || amount < 0) {
+                result.textContent = "Enter a valid amount.";
+                return;
+            }
+
+            status.textContent = "Loading exchange rate...";
+            result.textContent = "";
+
+            try {
+                let rate = 1;
+
+                if (from !== to) {
+                    const response = await fetch(
+                        "https://api.frankfurter.dev/v1/latest?base=" +
+                        from + "&symbols=" + to
+                    );
+
+                    if (!response.ok) throw new Error("Rate request failed");
+
+                    const data = await response.json();
+                    rate = data.rates[to];
+                }
+
+                result.textContent =
+                    amount.toLocaleString(undefined, { maximumFractionDigits: 2 }) +
+                    " " + from + " = " +
+                    (amount * rate).toLocaleString(undefined, {
+                        maximumFractionDigits: 2
+                    }) + " " + to;
+
+                status.textContent = "Rate date: " + new Date().toLocaleDateString() +
+                    ". Rates may vary.";
+            } catch {
+                status.textContent =
+                    "Unable to retrieve exchange rates. Check your connection or try again.";
+            }
+        }
+    </script>
+</body>
+</html>

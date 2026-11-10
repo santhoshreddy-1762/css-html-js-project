@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <style>
+        body { font-family: Arial; max-width: 500px; margin: 40px auto; padding: 15px; }
+        input { padding: 10px; width: 65%; }
+        button { padding: 10px; cursor: pointer; }
+        li { margin: 12px 0; }
+    </style>
+</head>
+<body>
+    <h1>My To-Do List</h1>
+    <input id="task" placeholder="Enter a task">
+    <button onclick="addTask()">Add</button>
+    <ul id="list"></ul>
+
+    <script>
+        let tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+
+        function render() {
+            document.getElementById("list").innerHTML = "";
+            tasks.forEach((task, index) => {
+                const li = document.createElement("li");
+                li.textContent = task + " ";
+                const button = document.createElement("button");
+                button.textContent = "Delete";
+                button.onclick = () => {
+                    tasks.splice(index, 1);
+                    save();
+                };
+                li.appendChild(button);
+                document.getElementById("list").appendChild(li);
+            });
+        }
+
+        function save() {
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            render();
+        }
+
+        function addTask() {
+            const input = document.getElementById("task");
+            if (input.value.trim() === "") return;
+            tasks.push(input.value.trim());
+            input.value = "";
+            save();
+        }
+
+        render();
+    </script>
+</body>
+</html>

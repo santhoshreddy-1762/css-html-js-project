@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countdown Timer</title>
+    <style>
+        body { text-align: center; font-family: Arial; margin-top: 100px; }
+        #timer { font-size: 45px; margin: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Countdown Timer</h1>
+    <input type="number" id="seconds" min="1" placeholder="Seconds">
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
+    <button onclick="resetTimer()">Reset</button>
+    <div id="timer">00:00</div>
+
+    <script>
+        let remaining = 0;
+        let interval = null;
+
+        function displayTime() {
+            const min = Math.floor(remaining / 60);
+            const sec = remaining % 60;
+            document.getElementById("timer").textContent =
+                String(min).padStart(2, "0") + ":" +
+                String(sec).padStart(2, "0");
+        }
+
+        function startTimer() {
+            if (interval !== null) return;
+
+            if (remaining <= 0) {
+                remaining = Number(document.getElementById("seconds").value);
+            }
+
+            if (!Number.isInteger(remaining) || remaining <= 0) {
+                alert("Enter a positive number of seconds.");
+                return;
+            }
+
+            displayTime();
+
+            interval = setInterval(() => {
+                remaining--;
+                displayTime();
+
+                if (remaining <= 0) {
+                    stopTimer();
+                    alert("Time is up!");
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(interval);
+            interval = null;
+        }
+
+        function resetTimer() {
+            stopTimer();
+            remaining = 0;
+            displayTime();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #f4f7fb;
+            --card: #ffffff;
+            --text: #202b3c;
+            --primary: #087f8c;
+        }
+
+        body.dark {
+            --bg: #101820;
+            --card: #1c2935;
+            --text: #f2f7fb;
+            --primary: #27c5d9;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8%;
+            background: var(--card);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 10px #00000012;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 18px;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        button, .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 11px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        section {
+            padding: 65px 8%;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 440px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .hero h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            margin-bottom: 22px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary);
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .about-text {
+            max-width: 750px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px #00000010;
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .skills span {
+            background: var(--card);
+            border: 1px solid var(--primary);
+            padding: 10px 18px;
+            border-radius: 20px;
+        }
+
+        form {
+            max-width: 550px;
+            margin: auto;
+            background: var(--card);
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            font: inherit;
+        }
+
+        form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        #formMessage {
+            margin-top: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            background: var(--card);
+        }
+
+        @media (max-width: 750px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">MyPortfolio</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button onclick="toggleTheme()" id="themeButton">Dark Mode</button>
+    </header>
+
+    <section class="hero" id="home">
+        <div>
+            <h2>Hello, welcome to my portfolio!</h2>
+            <h1>I'm Your Name</h1>
+            <p>A Student | Web Developer | Technology Enthusiast</p>
+            <a href="#projects" class="btn">View My Projects</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-text">
+            <p>
+                I am a student interested in web development and programming.
+                I enjoy creating websites and learning new technologies.
+                My goal is to build useful, creative, and user-friendly applications.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Python</span>
+            <span>Git and GitHub</span>
+            <span>Responsive Design</span>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">My Projects</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Portfolio Website</h3>
+                <p>A personal website built using HTML, CSS, and JavaScript.</p>
+            </div>
+
+            <div class="card">
+                <h3>Calculator</h3>
+                <p>A calculator that performs basic arithmetic operations.</p>
+            </div>
+
+            <div class="card">
+                <h3>To-Do List</h3>
+                <p>A task management application for organizing daily activities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+            <p id="formMessage"></p>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle("dark");
+
+            const isDark = document.body.classList.contains("dark");
+            document.getElementById("themeButton").textContent =
+                isDark ? "Light Mode" : "Dark Mode";
+
+            localStorage.setItem("portfolioTheme", isDark ? "dark" : "light");
+        }
+
+        if (localStorage.getItem("portfolioTheme") === "dark") {
+            document.body.classList.add("dark");
+            document.getElementById("themeButton").textContent = "Light Mode";
+        }
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+
+            document.getElementById("formMessage").textContent =
+                "Thank you, " + name + "! Your form was validated successfully.";
+
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

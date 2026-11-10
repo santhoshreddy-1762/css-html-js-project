@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+</head>
+<body style="font-family:Arial;text-align:center">
+    <h1>Online Shopping</h1>
+    <button onclick="addItem('Notebook', 50)">Add Notebook ₹50</button>
+    <button onclick="addItem('Pen', 10)">Add Pen ₹10</button>
+    <button onclick="addItem('Bag', 500)">Add Bag ₹500</button>
+    <h2>Your Cart</h2>
+    <ul id="cart"></ul>
+    <h3 id="total">Total: ₹0</h3>
+
+    <script>
+        let items = [];
+
+        function addItem(name, price) {
+            items.push({ name, price });
+            renderCart();
+        }
+
+        function removeItem(index) {
+            items.splice(index, 1);
+            renderCart();
+        }
+
+        function renderCart() {
+            const cart = document.getElementById("cart");
+            cart.innerHTML = "";
+            let total = 0;
+
+            items.forEach((item, index) => {
+                total += item.price;
+                const li = document.createElement("li");
+                li.textContent = item.name + " - ₹" + item.price + " ";
+
+                const button = document.createElement("button");
+                button.textContent = "Remove";
+                button.onclick = () => removeItem(index);
+
+                li.appendChild(button);
+                cart.appendChild(li);
+            });
+
+            document.getElementById("total").textContent = "Total: ₹" + total;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Projects | HTML CSS JavaScript</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0b3d91, #00a6a6);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+
+        header p {
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .search {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            padding: 13px;
+            margin: 0 auto 30px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .programs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            border-top: 4px solid #00a6a6;
+            box-shadow: 0 4px 12px #00000012;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px #00000020;
+        }
+
+        .number {
+            color: #00a6a6;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            color: #0b3d91;
+            margin-bottom: 12px;
+            font-size: 19px;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.6;
+            min-height: 50px;
+            margin-bottom: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #0b3d91;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #00a6a6;
+        }
+
+        .back {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        footer {
+            background: #102a43;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        #noResults {
+            display: none;
+            text-align: center;
+            margin: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .programs {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .programs {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Mini Projects</h1>
+        <p>17 Practical Programs Using HTML, CSS and JavaScript</p>
+        <p>Choose a project to open and run it.</p>
+    </header>
+
+    <main class="container">
+
+        <input
+            type="text"
+            id="search"
+            class="search"
+            placeholder="Search mini projects..."
+            oninput="searchPrograms()"
+        >
+
+        <div class="programs" id="programs">
+
+            <div class="card">
+                <div class="number">PROGRAM 01</div>
+                <h3>Digital Calculator</h3>
+                <p>Perform basic mathematical calculations.</p>
+                <a class="btn" href="001-digital-calculator.html">Open Project</a>
+            </div>
+
+            <div class="card">
+                <div class="number">PROGRAM 02</div>
+                <h3>Digital Clock</h3>
+                <p>Display the current time and date.</p>
+                <a class="btn" href="002-digital-clock.html">Open Project</a>
+            </div>
+
+            <div class="card">
+                <div class="number">PROGRAM 03</div>
+                <h3>Stopwatch</h3>
+                <p>Start, stop and reset a stopwatch.</p>
+                <a class="btn" href="003-stopwatch.html">Open Project</a>
+            </div>
+
+            <div class="card">
+                <div class="number">PROGRAM 04</div>
+                <h3>Countdown Timer</h3>
+                <p>Count down from a selected number of seconds.</p>
+                <a class="btn" href="004-countdown-timer.html">Open Project</a>
+            </div>
+
+            <div class="card">
+                <div class="number">PROGRAM 05</div>
+                <h3>To-Do List Application</h3>
+                <p>Add and delete daily tasks.</p>
+                <a class="btn" href="005-to-do-list-application.html">Open Project</a>
+            </div>
+
+            <div class="card">
+                <div class="number">PROGRAM 06</div>
+                <h3>Weather Application</h3>
+                <p>Retrieve weather information using an API.</p>
+                <a class="btn" href="006-weather-application-using-an-api.html">Open Project</a>
+            </div>
+
+            <div class="card">
+                <div class="number">PROGRAM 07</div>
+                <h3>Quiz Application</h3>
+                <p>Answer questions and calculate your score.</p>
+                <a class="btn" href="007-quiz-application.html">Open Project</a>
+            </div>
+
+            <div class="card">
+                <div class="number">PROGRAM 08</div>
+                <h3>Number Guessing Game</h3>
+                <p>Guess a randomly generated number.</p>
+                <a class="btn" href="008-number-guessing-game.html">Open Project</a>
+            </div>
+
+            <div class="card">
+                <div class="number">PROGRAM 09</div>
+                <h3>Tic-Tac-Toe Game</h3>
+                <p>Play the classic two-player X and O game.</p>
+                <a class="btn" href="009-tic-tac-toe-game.html">Open Project</a>
+            </div>
+
+            <div class="card">
+                <div class="number">PROGRAM 10</div>
+                <h3>Simple Expense Tracker</h3>
+                <p>Record expenses and calculate the total.</p>
+                <a class="btn" href="010-simple-expense-tracker.html">Open Project</a>
+            </div>
+
+            <div class="card">
+                <div class="number">PROGRAM 11</div>
+                <h3>Student Marks and Grade Calculator</h3>
+                <p>Calculate total marks, average and grade.</p>
+                <a class="btn" href="011-student-marks-grade-calculator.html">Open Project</a>
+            </div>
+
+            <div class="card">
+                <div class="number">PROGRAM 12</div>
+                <h3>Simple Shopping Cart</h3>
+                <p>Add products, remove items and view the total.</p>
+                <a class="btn" href="012-simple-shopping-cart.html">Open Project</a>
+            </div>
+
+            <div class="card">
+                <div class="number">PROGRAM 13</div>
+                <h3>Notes Application</h3>
+                <p>Save notes using browser localStorage.</p>
+                <a class="btn" href="013-notes-application-using-localstorage.html">Open Project</a>
+            </div>
+
+            <div class="card">
+                <div class="number">PROGRAM 14</div>
+                <h3>Random Password Generator</h3>
+                <p>Generate random passwords with a chosen length.</p>
+                <a class="btn" href="014-random-password-generator.html">Open Project</a>
+            </div>
+
+            <div class="card">
+                <div class="number">PROGRAM 15</div>
+                <h3>BMI Calculator</h3>
+                <p>Calculate BMI using height and weight.</p>
+                <a class="btn" href="015-bmi-calculator.html">Open Project</a>
+            </div>
+
+            <div class="card">
+                <div class="number">PROGRAM 16</div>
+                <h3>Currency Converter</h3>
+                <p>Convert currencies using an exchange-rate API.</p>
+                <a class="btn" href="016-currency-converter-using-an-api.html">Open Project</a>
+            </div>
+
+            <div class="card">
+                <div class="number">PROGRAM 17</div>
+                <h3>Interactive Portfolio Website</h3>
+                <p>A responsive portfolio with skills, projects and a contact form.</p>
+                <a class="btn" href="017-complete-interactive-portfolio-website.html">Open Project</a>
+            </div>
+
+        </div>
+
+        <p id="noResults">No matching projects found.</p>
+
+        <div class="back">
+            <a class="btn" href="../index.html">Back to JavaScript Home</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>JavaScript Mini Projects | HTML, CSS and JavaScript</p>
+    </footer>
+
+    <script>
+        function searchPrograms() {
+            const value = document.getElementById("search").value.toLowerCase();
+            const cards = document.querySelectorAll(".card");
+            let count = 0;
+
+            cards.forEach(card => {
+                const match = card.textContent.toLowerCase().includes(value);
+                card.style.display = match ? "block" : "none";
+
+                if (match) {
+                    count++;
+                }
+            });
+
+            document.getElementById("noResults").style.display =
+                count === 0 ? "block" : "none";
+        }
+    </script>
+
+</body>
+</html>

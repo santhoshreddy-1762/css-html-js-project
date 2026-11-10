@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Calculator</title>
+</head>
+<body style="font-family:Arial;text-align:center;margin-top:60px">
+    <h1>Student Grade Calculator</h1>
+    <input id="name" placeholder="Student name"><br><br>
+    <input id="m1" type="number" placeholder="Subject 1 marks" min="0" max="100"><br><br>
+    <input id="m2" type="number" placeholder="Subject 2 marks" min="0" max="100"><br><br>
+    <input id="m3" type="number" placeholder="Subject 3 marks" min="0" max="100"><br><br>
+    <button onclick="calculate()">Calculate Grade</button>
+    <h3 id="result"></h3>
+
+    <script>
+        function calculate() {
+            const name = document.getElementById("name").value.trim();
+            const marks = ["m1", "m2", "m3"].map(id =>
+                document.getElementById(id).value
+            );
+
+            if (!name || marks.some(m => m === "" || Number(m) < 0 || Number(m) > 100)) {
+                document.getElementById("result").textContent =
+                    "Enter a name and marks between 0 and 100.";
+                return;
+            }
+
+            const values = marks.map(Number);
+            const average = values.reduce((sum, mark) => sum + mark, 0) / values.length;
+            const grade = average >= 90 ? "A" :
+                          average >= 75 ? "B" :
+                          average >= 60 ? "C" :
+                          average >= 40 ? "D" : "F";
+
+            document.getElementById("result").textContent =
+                name + " | Total: " + values.reduce((a, b) => a + b, 0) +
+                "/300 | Average: " + average.toFixed(2) +
+                "% | Grade: " + grade +
+                " | " + (values.every(m => m >= 35) ? "Pass" : "Fail");
+        }
+    </script>
+</body>
+</html>
