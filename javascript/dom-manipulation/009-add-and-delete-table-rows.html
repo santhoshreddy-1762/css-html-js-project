@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Delete Table Rows</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 40px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #555;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #1e3a8a;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<h2>9. Add and Delete Table Rows</h2>
+
+<input type="text" id="name" placeholder="Name">
+
+<input type="number" id="age" placeholder="Age">
+
+<button onclick="addRow()">Add Row</button>
+
+<table id="table">
+
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Action</th>
+    </tr>
+
+</table>
+
+<script>
+function addRow() {
+    let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
+
+    if (name === "" || age === "") {
+        alert("Enter all details");
+        return;
+    }
+
+    let table = document.getElementById("table");
+
+    let row = table.insertRow();
+
+    row.insertCell(0).innerHTML = name;
+
+    row.insertCell(1).innerHTML = age;
+
+    row.insertCell(2).innerHTML =
+        "<button onclick='deleteRow(this)'>Delete</button>";
+
+    document.getElementById("name").value = "";
+    document.getElementById("age").value = "";
+}
+
+function deleteRow(button) {
+    button.parentElement.parentElement.remove();
+}
+</script>
+
+</body>
+</html>

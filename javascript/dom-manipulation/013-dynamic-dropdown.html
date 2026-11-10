@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Dropdown</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 40px;
+        }
+
+        select, button {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>13. Dynamic Dropdown List</h2>
+
+<select id="course">
+    <option>Select Course</option>
+</select>
+
+<br>
+
+<button onclick="loadCourses()">Load Courses</button>
+
+<script>
+function loadCourses() {
+    let courses = [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Python",
+        "Java"
+    ];
+
+    let dropdown =
+        document.getElementById("course");
+
+    dropdown.innerHTML =
+        "<option>Select Course</option>";
+
+    courses.forEach(function(course) {
+
+        let option =
+            document.createElement("option");
+
+        option.text = course;
+        option.value = course;
+
+        dropdown.appendChild(option);
+    });
+}
+</script>
+
+</body>
+</html>

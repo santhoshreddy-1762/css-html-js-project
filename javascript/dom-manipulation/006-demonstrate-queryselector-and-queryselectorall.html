@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>querySelector and querySelectorAll</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .item {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2 id="heading">Query Selector</h2>
+
+<p class="item">HTML</p>
+<p class="item">CSS</p>
+<p class="item">JavaScript</p>
+
+<button onclick="changeElements()">Change Elements</button>
+
+<script>
+function changeElements() {
+    let heading =
+        document.querySelector("#heading");
+
+    heading.innerHTML =
+        "querySelector() Used";
+
+    let items =
+        document.querySelectorAll(".item");
+
+    items.forEach(function(item) {
+        item.style.color = "blue";
+        item.style.backgroundColor = "lightgreen";
+        item.style.fontWeight = "bold";
+    });
+}
+</script>
+
+</body>
+</html>

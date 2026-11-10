@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Multiple Elements</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 40px;
+        }
+
+        button {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2 id="heading">Welcome</h2>
+
+<p id="para1">First paragraph</p>
+
+<p id="para2">Second paragraph</p>
+
+<button onclick="changeElements()">Change Elements</button>
+
+<script>
+function changeElements() {
+    document.getElementById("heading").innerHTML =
+        "JavaScript DOM";
+
+    document.getElementById("para1").innerHTML =
+        "First paragraph changed.";
+
+    document.getElementById("para2").innerHTML =
+        "Second paragraph changed.";
+
+    document.getElementById("heading").style.color =
+        "blue";
+
+    document.getElementById("para1").style.color =
+        "green";
+
+    document.getElementById("para2").style.color =
+        "red";
+}
+</script>
+
+</body>
+</html>

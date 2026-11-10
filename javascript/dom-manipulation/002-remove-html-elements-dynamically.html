@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove HTML Elements</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 40px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+        }
+
+        li {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>2. Remove HTML Elements Dynamically</h2>
+
+<ul id="list">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+
+<button onclick="removeElement()">Remove Last Element</button>
+
+<script>
+function removeElement() {
+    let list = document.getElementById("list");
+
+    if (list.lastElementChild) {
+        list.removeChild(list.lastElementChild);
+    }
+}
+</script>
+
+</body>
+</html>

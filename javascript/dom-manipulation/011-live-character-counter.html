@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Counter</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 40px;
+        }
+
+        textarea {
+            width: 400px;
+            height: 150px;
+            padding: 10px;
+        }
+
+        #count {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>11. Live Character Counter</h2>
+
+<textarea
+    id="text"
+    maxlength="100"
+    oninput="countCharacters()"
+    placeholder="Type something..."
+></textarea>
+
+<p>
+    Characters:
+    <span id="count">0</span> / 100
+</p>
+
+<script>
+function countCharacters() {
+    let text =
+        document.getElementById("text").value;
+
+    document.getElementById("count").innerHTML =
+        text.length;
+}
+</script>
+
+</body>
+</html>

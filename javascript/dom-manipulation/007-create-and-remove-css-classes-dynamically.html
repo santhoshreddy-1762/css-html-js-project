@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Classes Dynamically</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .highlight {
+            background-color: yellow;
+            color: red;
+            font-size: 25px;
+            font-weight: bold;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>7. Create and Remove CSS Classes</h2>
+
+<p id="text">This is a paragraph.</p>
+
+<button onclick="addClass()">Add Class</button>
+
+<button onclick="removeClass()">Remove Class</button>
+
+<script>
+function addClass() {
+    document.getElementById("text")
+        .classList.add("highlight");
+}
+
+function removeClass() {
+    document.getElementById("text")
+        .classList.remove("highlight");
+}
+</script>
+
+</body>
+</html>

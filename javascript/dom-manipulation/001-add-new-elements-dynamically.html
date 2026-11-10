@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Elements</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 40px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+        }
+
+        li {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>1. Add New Elements Dynamically</h2>
+
+<button onclick="addElement()">Add Element</button>
+
+<ul id="list"></ul>
+
+<script>
+function addElement() {
+    let li = document.createElement("li");
+
+    li.innerHTML = "New element added using JavaScript";
+
+    document.getElementById("list").appendChild(li);
+}
+</script>
+
+</body>
+</html>

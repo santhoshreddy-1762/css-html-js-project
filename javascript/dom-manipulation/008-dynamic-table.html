@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Table</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 40px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #555;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #1e3a8a;
+            color: white;
+        }
+
+        button {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>8. Dynamic Table</h2>
+
+<button onclick="createTable()">Create Table</button>
+
+<table id="table"></table>
+
+<script>
+function createTable() {
+    let students = [
+        ["Santhosh", 21, "CSE"],
+        ["Rahul", 22, "ECE"],
+        ["Kiran", 20, "IT"]
+    ];
+
+    let table = document.getElementById("table");
+
+    table.innerHTML =
+        "<tr><th>Name</th><th>Age</th><th>Department</th></tr>";
+
+    students.forEach(function(student) {
+        let row = table.insertRow();
+
+        row.insertCell(0).innerHTML = student[0];
+        row.insertCell(1).innerHTML = student[1];
+        row.insertCell(2).innerHTML = student[2];
+    });
+}
+</script>
+
+</body>
+</html>

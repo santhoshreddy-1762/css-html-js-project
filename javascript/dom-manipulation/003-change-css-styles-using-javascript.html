@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change CSS Styles</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 40px;
+        }
+
+        #text {
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>3. Change CSS Styles Using JavaScript</h2>
+
+<p id="text">This text will change its style.</p>
+
+<button onclick="changeStyle()">Change Style</button>
+
+<script>
+function changeStyle() {
+    let text = document.getElementById("text");
+
+    text.style.color = "blue";
+    text.style.backgroundColor = "yellow";
+    text.style.fontSize = "25px";
+    text.style.fontWeight = "bold";
+    text.style.padding = "20px";
+}
+</script>
+
+</body>
+</html>

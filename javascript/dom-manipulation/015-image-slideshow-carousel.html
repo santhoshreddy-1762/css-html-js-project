@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Slideshow</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 40px;
+            background: #f1f5f9;
+        }
+
+        img {
+            width: 600px;
+            max-width: 90%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 15px 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>15. Image Slideshow / Carousel</h2>
+
+<img id="slide"
+     src="https://picsum.photos/id/1015/600/350">
+
+<br>
+
+<button onclick="previousImage()">Previous</button>
+
+<button onclick="nextImage()">Next</button>
+
+<script>
+let images = [
+    "https://picsum.photos/id/1015/600/350",
+    "https://picsum.photos/id/1016/600/350",
+    "https://picsum.photos/id/1018/600/350",
+    "https://picsum.photos/id/1020/600/350"
+];
+
+let current = 0;
+
+function showImage() {
+    document.getElementById("slide").src =
+        images[current];
+}
+
+function nextImage() {
+    current++;
+
+    if (current >= images.length) {
+        current = 0;
+    }
+
+    showImage();
+}
+
+function previousImage() {
+    current--;
+
+    if (current < 0) {
+        current = images.length - 1;
+    }
+
+    showImage();
+}
+
+setInterval(nextImage, 3000);
+</script>
+
+</body>
+</html>
